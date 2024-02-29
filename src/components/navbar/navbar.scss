@@ -1,0 +1,209 @@
+@import './../../styles/variables/variables.scss';
+
+//nav only - import in header
+// nav {
+//     @include flexdisplay(row, flex-end, center);  
+//     gap: 20px; 
+//     color: $dark-md; 
+//   }
+  
+  .md-dark-color {
+    color: $dark-md
+  }
+
+  //three-split-nav
+  .nav-menu {
+    @include flexdisplay(row, space-between, center);  
+    color: $dark-md;
+    width: 100%;
+    padding-top: 2%;
+    padding-right: 2%;
+    margin-bottom: 1%;
+    height: auto;
+      
+    .left {
+      width: 160px;
+      margin-bottom: 0px;
+
+      .logo {
+        @include flexdisplay(column, center, center); 
+                
+        .icon {
+            font-size: 60px;
+            color: $dark-md;
+          }  
+      
+          .logo-text {
+              color: $dark-md;
+              font-size: 25px;
+          }
+      }
+    }
+  
+    // .center {
+    //   @include flexdisplay(row, center, center);  //used as a 
+    //   width: 100%;
+    // }
+  
+    .right {
+      @include flexdisplay(row, flex-end, center);  //used as a header
+      width: 100%;
+      padding-right: 1%;  
+  
+      .nav-links {
+        margin-left: 10px;
+        font-weight: bold;
+      }  
+
+      .nav-link {
+        color: $dark-md;
+      }
+        
+      .icons {
+        @include flexdisplay(row, flex-end, flex-start);  //used as a header
+        gap: 10px;
+        font-size: 20px;
+        cursor: pointer;  
+  
+        .icon {
+          margin-left: 20px;
+        }
+
+        &.menu-icon {
+          font-size: 50px;
+          align-self: flex-end;
+          display: none;
+        }        
+
+        .cartIcon {
+          @include flexdisplay(row, flex-start, flex-start);  //used as a header
+          position: relative;
+          z-index: 9999;
+  
+          span {
+            @include flexdisplay(row, center, center);  //used as a header
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $light-md;
+            position: absolute;
+            right: -13px;
+            top: -13px;          
+          }
+          //@include flexdisplay(row, flex-start, flex-start);  //used as a header
+        }
+      }
+    }    
+  }
+  
+
+.product-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    right: 20px;  
+    top: 80px;  //from the previous element
+    z-index: 999; 
+    background-color:antiquewhite; 
+    box-shadow: 5px 5px 5px 5px #888888;
+    padding: 20px;
+    border-radius: 3px;;
+
+   .data {
+        display: flex;
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+        .details {
+            h3 {
+                margin-bottom: 30px;
+            }
+
+            .desc {
+                color: #6666;
+            }
+
+            .price {
+                color: rgb(59, 59, 173);
+                font-weight: bold;
+            }
+
+        }
+
+        .delete-icon {
+            display: inline-block;
+            width: 100px;
+            margin: 0 auto;
+            color: #600;
+        }
+   }
+
+   .total {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+
+    .cart-btn {
+        width: 150px;
+        height: 30px;
+    }
+
+    .reset {
+        color: red;
+        font-size: small;
+        cursor: pointer;
+    }
+
+}
+
+
+@media only screen and (max-width: 992px) {
+  .nav-menu {
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 5% 5% 0 5%;
+
+    .left {
+      height: 100%;
+      flex: 1;
+
+      .logo {
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+
+    .right {
+        @include flexdisplay(column-reverse, flex-start, flex-end);  //used as a header
+        gap: 15px;
+        flex: 1;  
+        margin-bottom: 10px;    
+
+        .nav-links {
+          align-self: flex-end;
+          height: 0;
+          overflow: hidden;
+          transition: var(--transition);          
+        }
+
+        .show-nav-links {
+          height: auto;
+        }
+        
+
+        .icons {
+          
+          &.menu-icon {
+            display: inline-block;
+          }
+        }
+    }    
+  }
+}

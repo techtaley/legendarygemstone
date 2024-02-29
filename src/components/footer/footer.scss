@@ -1,0 +1,46 @@
+@import './../../styles/variables/variables.scss';
+
+a:link.footer-link,
+a:visited.footer-link {    
+    color: $dark-md;
+}
+
+a:hover.footer-link,
+a:active.footer-link {
+    text-decoration: underline;
+    color: $dark-md;
+    color: #333;
+}
+
+.mainFooter {
+    background-color: rgb(234, 208, 143);
+    padding: 2% 2% 0 2%;
+    width: 100%;
+}
+
+.bottom-footer {
+    @include flexdisplay(row, space-between, center);  //used as a header
+    gap: 20px;
+    cursor: pointer;
+    padding-bottom: 1%;
+
+    .logo {
+        color: $dark-md;
+        font-size: 50px;
+        gap: 10px;
+        flex: 1;
+
+    }
+
+    .social-icons {
+        @include flexdisplay(row, flex-end, center);  //used as a header
+        font-size: 20px;
+        flex: 1;
+        gap: 20px;
+
+        .icon {
+            gap: 20px;
+        }
+    }
+} 
+

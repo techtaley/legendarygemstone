@@ -1,0 +1,432 @@
+@import './../variables/variables.scss';
+
+/**********************
+GLOBAL CSS
+**********************/
+
+*,
+::before,
+::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;  
+}
+
+.defaults {  
+  div, h1, h2, h3, li {
+    margin: 8px 0;
+    padding: 8px 0;  
+  }
+
+  p, li {
+    line-height: 1.3;
+  }
+}
+
+html {
+  font-size: 100%;  //16px;
+  height: 100%;  
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  color: $dark-md;
+  cursor: pointer;
+  line-height: 1;
+  background-color: $light-lt;
+ 
+  a:link,
+  a:visited,
+  a:active {
+    color: $light-lt;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $light-lt;
+    text-decoration: underline;
+  }
+  
+  a.dark-link:link,
+  a.dark-link:visited,
+  a.dark-link:active {
+    color: $dark-md;
+    text-decoration: none;
+  }
+  a.dark-link:hover {
+    color: $dark-md;
+    text-decoration: underline;
+  } 
+
+  * {
+    font-family: 'Arial', 'Verdana', sans-serif
+  }
+ 
+  * {
+    box-sizing: border-box;
+  }  
+}
+
+h1, h2, h3, h4, h5 {
+  //text-transform: capitalize;
+}
+
+h1 {
+  font-size: 2rem;          //32px
+}
+
+h2 {
+  font-size: 1.75rem;       //28px
+}
+
+h3 {            
+  font-size: 1.375rem;      //22px
+}
+
+h4 {            
+  font-size: 1.25rem;       //20px
+}
+
+h5 {            
+  font-size: 1.125rem;      //18px
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h2, h3, h4, h5 {
+
+}
+
+p {
+  line-height: 1.5; 
+}
+
+.logo {
+    font-size: 2rem;
+    color: $dark-lt;
+}
+
+.caption {
+    font-size: $captionfont;
+    color: $dark-lt;
+    margin-left: 2%;
+
+    &.ontop {
+      margin-top: -20px;
+    }
+}
+
+.btn {
+  cursor: pointer;
+  border: transparent;
+  border-radius: $border-radius3;
+  padding: 2%;
+  display: block;
+  margin: 0px auto;
+  font-size: $normalfont;
+  margin-top: 30px;
+
+  &.darkbtn {
+    background-color: $dark-lt;
+    color: $light-md;
+  }
+
+  &.lightbtn {
+    background-color: $light-dk;
+    color: $dark-md;
+  }
+}
+
+button {
+  background-color: $accent-md;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+img {
+   width: 100%;
+   display: block;
+   border-radius: 3px;
+   object-fit: cover;
+   margin-bottom: 0px;
+}
+
+.page-center {
+    @include flexdisplay(column, flex-start, center);
+    height: 100vh;
+} 
+
+header {
+    @include flexdisplay(row, space-between, center);
+    background-color: $dark-md;
+    width: 100%;
+    padding-left: 5px;
+    color: $light-lt;
+    height: 50px;
+
+    .logo {
+        font-size: $logo;
+    }
+}
+
+
+.flexcolumn {
+  @include flexdisplay(column, flex-start, flex-start);  //used as a header
+  //gap: 10px;
+  cursor: pointer;
+}
+
+.flexrow {
+  @include flexdisplay(row, flex-start, flex-start);  //used as a header
+  gap: 20px;
+  cursor: pointer;
+
+  .flex1 {
+    flex: 1;
+  }
+
+  .flex2 {
+    flex: 2;
+  }
+
+  .flex3 {
+    flex: 4;
+  }
+
+  &.spacebetween {
+    justify-content: space-between; 
+   }
+  
+   &.spaceevenly {
+     justify-content: space-evenly; 
+    } 
+    
+  &.flexend {
+    justify-content: flex-end; 
+    }       
+}
+
+a.nav-link:link,
+a.nav-link:visited,
+a.nav-link:active {
+  color: red;
+  text-decoration: none;
+}
+a.nav-link:hover {
+  color: $dark-md;
+  text-decoration: underline;
+}  
+
+// a.nav-links:link,
+// a.nav-links:visited,
+// a.nav-links:active {
+//   color: $dark-md;
+//   text-decoration: none;
+// }
+// a.nav-links:hover {
+//   color: $dark-md;
+//   text-decoration: underline;
+// }  
+
+//font color
+.darkfont {
+    color: $dark-dk; 
+}
+.brightfont {
+    color: $accent-md; 
+}
+.lightfont {
+    color: $light-lt; 
+}
+
+//alignment
+.center {
+    text-align: center;
+    margin-bottom: 60px; 
+}
+
+.justify {
+  text-align: justify;
+  margin-bottom: 60px;
+}
+
+.left {
+    text-align: left;
+    margin-bottom: 60px;         
+}  
+
+.right {
+    text-align: right;
+    margin-bottom: 60px;         
+}  
+
+.bold { 
+    font-weight: bold;
+}
+
+.italics {
+    font-style: italic; 
+}
+
+.hidden {
+    display: none; 
+}
+
+//quotemark
+.big-quotemark {
+    font-size: 7rem;
+}
+
+.med-quotemark {
+    font-size: 5rem;
+}
+
+.sm-quotemark { 
+    font-size: 3rem; 
+}
+
+.quote-text {
+    font-size: $subheading; 
+}
+
+//page width
+.width70 {
+    width: 70%; 
+    margin: auto;
+} 
+
+.width80 {
+    width: 80%;
+    margin: auto;
+}
+
+.width90 {
+    width: 90%;
+    margin: auto;
+}
+
+
+.margin70 {
+  width: 70%;
+  margin: auto;  
+}
+
+.margin80 {
+  width: 80%;  
+  margin: auto;
+}
+  
+//margins
+.marginbtm30 {
+  margin-bottom: 30px;
+}
+
+.marginbtm60 {
+  margin-bottom: 60px;
+}
+
+.marginbtm80 {
+  margin-bottom: 80px;
+}
+
+.remove-margin { 
+  margin-bottom: 0px;  
+} 
+
+//hr
+.hrdark {
+    color: $accent-dk;
+    height: 5px;
+    background-color: $accent-dk;
+    border: 1px solid $accent-dk;    
+}
+
+.hrbright {
+    color: $accent-md;
+    height: 5px;
+    background-color: $accent-md;
+    border: 1px solid $accent-md;
+}
+
+//box-shadow
+.box-shaddow {
+    color: $dark-lt;  
+    box-shadow: 5px 10px 10px $dark-lt; 
+
+    &:hover {
+        box-shadow: 5px 10px 20px $dark-lt;  
+    }
+}
+
+.app {
+  width: 100%;
+}
+
+.section {
+  margin: auto;
+  margin-top: 40px;
+  width: 95%;
+}
+
+@media only screen and (max-width: 992px) {
+    .responsive {
+      @include flexdisplay(column, center, flex-start);
+
+      &.products {
+        .left-side {
+          @include flexdisplay(row, space-evenly, flex-start);
+          position: relative;
+          top: 0px;
+          margin-bottom: 60px;
+          width: 100%;
+
+          h2 {
+            font-size: $normalfont;
+          }
+        }
+
+        .right-side {
+          .product-list {
+            @include flexdisplay(row, center, flex-start);
+          }
+        }
+      }
+
+      &.single-products{
+        .right-side {
+          align-items: center;
+        }
+      }
+
+      &.categories {
+        height: auto;
+        align-items: center;
+
+        .grid {
+          max-width: 300px;
+        }
+      }
+
+      &.footer {
+        margin: 0 10%
+      }
+
+      &.bottom-footer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+    }      
+}
+
+
+
+
+
+
+
+
+
+

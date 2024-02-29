@@ -1,0 +1,59 @@
+@import './../../styles/variables/variables.scss';
+
+//HEROS
+.multi-box-row {
+    @include flexdisplay(row, space-between, center); 
+    margin: auto;
+    margin-bottom: 60px;
+    gap: 20px;
+  
+    .box {
+        @include flexdisplay(column, flex-start, center);
+        width: 300px;
+        padding: 20px;
+        font-size: $captionfont;
+        border-radius: 5px;
+        margin-bottom: 60px;
+  
+        a.box-link {
+            color: $light-lt; 
+        }
+  
+        &:hover {
+            transform: scale(1.02);
+            transition: all .5s linear;            
+        }
+  
+        .contactborder {
+          border: 3px solid $accent-lt;  
+          border-radius: 5px; 
+          padding: 30px; 
+          margin: 0px;
+        }
+  
+        .icons {
+          font-size: 3rem; 
+          color: $accent-lt;
+          margin-bottom: 20px;
+        }
+  
+        .centeralign {   //contactform
+          text-align: center; 
+          margin-bottom: 20px;
+        }
+  
+        .bold { 
+          font-weight: bold;
+      }
+        
+    }
+    
+    .nobkg {
+      color: $dark-md;  
+      box-shadow: 5px 10px 10px $dark-lt; 
+  
+      &:hover {
+          box-shadow: 5px 10px 20px $dark-lt;  
+      }
+    }
+  } 

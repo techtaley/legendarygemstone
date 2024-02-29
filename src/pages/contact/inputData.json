@@ -1,0 +1,63 @@
+{
+    "data": [
+      {
+        "id": "0",
+        "type": "text",
+        "placeholder": "enter text",
+        "name": "website",
+        "tabIndex": "10",
+        "className": "no-show",
+        "pattern": "[^s]*" 
+      },
+      {
+        "id": "1",
+        "label": "Full name",
+        "placeholder": "Full name",
+        "type": "text",
+        "name": "name",
+        "accessKey": "n",
+        "tabIndex": "11",
+        "className": "form-input",
+        "pattern": "^[A-Za-z]{5,30}$",
+        "required": "true",
+        "errorMsg": "full name should be 5-30 characters that do not include special characters!"
+      },
+      {
+        "id": "2",
+        "label": "Company name",
+        "placeholder": "Company name",
+        "type": "text",
+        "name": "cname",
+        "accessKey": "n",
+        "tabIndex": "13",
+        "className": "form-input"
+      },
+      {
+        "id": "3",
+        "label": "Email",
+        "placeholder": "Email",
+        "type": "email",
+        "name": "email",
+        "accessKey": "n",
+        "tabIndex": "15",
+        "className": "form-input",
+        "required": "true",
+        "maxLength": "80",
+        "pattern": "^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+.)+[A-Za-z]+$",
+        "errorMsg": "Please use the correct email@email.com format."
+      },
+      {
+        "id": "4",
+        "label": "Message",
+        "placeholder": "Your message",
+        "type": "text",
+        "name": "message",
+        "accessKey": "n",
+        "tabIndex": "16",
+        "className": "form-input",
+        "pattern": "^[A-Za-z]{0,200}$",
+        "required": "false",
+        "errorMsg": "Your message should be a maximum of 200 characters that do not include special characters!"
+      }     
+    ]
+  }

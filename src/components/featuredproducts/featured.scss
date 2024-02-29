@@ -1,0 +1,64 @@
+@import './../../styles/variables/variables.scss';
+
+
+.featured {
+  //border: 1px dotted red;
+
+  .featured-div {
+    @include flexdisplay(row, flex-end, flex-start);        
+    margin-bottom: 40px;
+    gap: 10px;
+    width: 100%;             
+
+
+    .featured-items-div {  
+      @include flexdisplay(row, flex-start, flex-end); 
+      
+      .featured-article {    
+        .feature-image {
+          position: relative;
+            width: 300px;
+            height: 400px; 
+          
+            &:hover {
+              .second-img {
+                z-index: 1;
+              }    
+            }  
+          
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              position: absolute;      
+            }
+          
+            .first-img {
+              z-index: 1;
+            }  
+          
+            .newarrival {
+              position: absolute;
+              color: $light-lt;
+              bottom: 0px;
+              right: 0px;
+              z-index: 2;
+              letter-spacing: 3px;
+              font-size: $headline;
+            } 
+          }
+      } 
+
+    }
+  }
+}
+
+  @media screen and (max-width: 992px) {
+    .featured {
+      //border: 1px dotted red;
+    
+      .featured-div {
+        @include flexdisplay(column, flex-end, center);                    
+      }
+    }      
+  }  
