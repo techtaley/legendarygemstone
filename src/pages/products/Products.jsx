@@ -86,12 +86,7 @@ export default function Products({type}) {
             </div>
           </div>
 
-          <div className="right-side">
-          {/*             
-          <div className="statement center">
-            <h2 className="cursive-script">You know the world is a magical place with mother earth grows her own jewelry where is this quote from</h2>
-          </div>              
-          */}
+          <div className="right-side">  
 
           <div className="product-nav-div">
             {/* <Link className="product-nav-link" to="/products/1">all</Link> */}
@@ -99,13 +94,17 @@ export default function Products({type}) {
             <Link className="product-nav-link" to="/products/3">earrings</Link>
             <Link className="product-nav-link" to="/products/4">rings</Link>
             <Link className="product-nav-link" to="/products/6">sale</Link>
-          </div>   
-         
+          </div>                    
           
-          <div className="search-div">
+            <div className="search-div">
                 <input type="text" className="search-input"  placeholder="Search for a product" onChange={handleChange}/>
                 {/* <PiMagnifyingGlassBold className="icon" /> */}
-            </div>            
+            </div> 
+
+          <div className="statement center">
+            <h3 className="cursive-script product">Simple enough for everyday and perfect for special occasions.</h3>
+          </div>              
+                         
             <div className="right-img marginbtm30">
                   <img
                     className="product-img"

@@ -69,7 +69,7 @@ const footerData = [
     id: "1",
     title: "About",
     link: "about",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis urna dui, a faucibus velit dapibus eget. Donec mauris leo, tristique at massa vel, placerat hendrerit nulla.",
+    desc: "I integrate quality and durability in each design, while highlighting the unqiue shape and earthy tone of the gemstone.",
     className: "",
   },
   {
