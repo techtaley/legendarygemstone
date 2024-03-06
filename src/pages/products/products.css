@@ -43,6 +43,27 @@
   flex: 3;
   margin-left: 30px;
 }
+.products .right-side .product-nav-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  height: 50px;
+  width: 80%;
+  margin: auto;
+  font-weight: bold;
+}
+.products .right-side .product-nav-div a.product-nav-link:link,
+.products .right-side .product-nav-div a.product-nav-link:visited,
+.products .right-side .product-nav-div a.product-nav-link:active {
+  color: #333333;
+  text-decoration: none;
+}
+.products .right-side .product-nav-div a.product-nav-link:hover {
+  color: #333333;
+  text-decoration: underline;
+}
 .products .right-side .search-div {
   display: flex;
   flex-direction: row;
@@ -76,15 +97,21 @@
   overflow: hidden;
 }
 
+.sale-price {
+  text-decoration: line-through;
+  color: #c3bfbf;
+  margin-right: 10px;
+}
+
 .product-list {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   margin: 0;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 .product-list .product-list-div {
   display: flex;
@@ -92,10 +119,24 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin: 0;
+  width: 230px;
+  height: 375px;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #c3bfbf;
 }
-.product-list .product-list-div .product-list-img {
-  height: 300px;
-  width: 200px;
+.product-list .product-list-div .product-list-desc .product-desc {
+  font-weight: bold;
+}
+.product-list .product-list-div .product-list-desc .product-details {
+  display: flex;
+  justify-content: space-between;
+}
+.product-list .product-list-div .product-list-desc .product-details .fillheart {
+  color: #333333;
+}
+.product-list .product-list-div .product-list-desc .product-details .outline {
+  background: #333333;
 }
 
 .single-product {
@@ -126,13 +167,13 @@
   border: none;
 }
 .single-product .left-side .thumbnail .thumbnail-image {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: auto;
   border: none;
 }
 .single-product .left-side .main-image {
-  width: 400px;
-  max-height: 800px;
+  width: 300px;
+  height: auto;
   overflow: hidden;
   flex: 5;
 }
@@ -249,4 +290,10 @@
 .single-product .right-side .product-like-links .link .icon {
   font-size: 1.25rem;
   margin-right: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .products {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=products.css.map */

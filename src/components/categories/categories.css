@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: flex-start;
   margin: 0;
-  height: 100vh;
+  height: 93vh;
   gap: 10px;
   overflow: hidden;
 }
@@ -64,9 +64,19 @@
   gap: 10px;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1480px) {
   .categories {
-    height: 70vh;
-    width: 100%;
+    max-height: 620px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .categories {
+    max-height: 500px;
+  }
+}
+@media only screen and (max-width: 1380px) {
+  .categories {
+    max-height: 425px;
+    border: 1px dotted yellow;
   }
 }/*# sourceMappingURL=categories.css.map */

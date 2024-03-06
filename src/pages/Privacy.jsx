@@ -5,7 +5,7 @@ export default function Privacy() {
   return (
     <section className="margin70 defaults">
       <h2 className="center darkfont">Privacy Policy</h2>
-      <p>This Privacy Policy describes how My Strapi Shop ("us", "we", or "our") collects, uses, and shares personal information when you use our website (the "service").
+      <p>This Privacy Policy describes how Legendary Gemstone LLC ("us", "we", or "our") collects, uses, and shares personal information when you use our website (the "service").
       </p>
 
       <h2>Information Collection and Use</h2>

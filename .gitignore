@@ -16,3 +16,9 @@ create_intent.js
 
 /client/src/pages/products/Products_backup.jsx
 /client/src/pages/products/Products_strapi.jsx
+
+/node_modules
+/dist
+/public
+.env
+/package-lock.json

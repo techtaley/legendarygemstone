@@ -16,9 +16,7 @@
     @include flexdisplay(row, space-between, center);  
     color: $dark-md;
     width: 100%;
-    padding-top: 2%;
-    padding-right: 2%;
-    margin-bottom: 1%;
+    padding: 3%;
     height: auto;
       
     .left {

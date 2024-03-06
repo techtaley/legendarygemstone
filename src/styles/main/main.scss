@@ -25,6 +25,7 @@ GLOBAL CSS
 
 html {
   font-size: 100%;  //16px;
+  font-family: $regular-font;
   height: 100%;  
   scroll-behavior: smooth;
 }
@@ -118,6 +119,7 @@ p {
     }
 }
 
+
 .btn {
   cursor: pointer;
   border: transparent;
@@ -129,8 +131,8 @@ p {
   margin-top: 30px;
 
   &.darkbtn {
-    background-color: $dark-lt;
-    color: $light-md;
+    background-color: $accent-dk;
+    color: $light-lt;
   }
 
   &.lightbtn {
@@ -140,9 +142,10 @@ p {
 }
 
 button {
-  background-color: $accent-md;
+  background-color: $accent-dk;
   cursor: pointer;
   border-radius: 2px;
+  color: $light-lt;
 }
 
 img {
@@ -217,7 +220,36 @@ a.nav-link:active {
 a.nav-link:hover {
   color: $dark-md;
   text-decoration: underline;
-}  
+} 
+
+.statement {
+  color: $accent-dk;
+  line-height: 1.5;
+  margin: 0 20%;
+  text-align: center;
+  margin-bottom: 40px;
+  //border: 1px dotted red;
+ 
+  .cursive-script {
+    font-family: $script-font;
+    font-size: $huge;
+  }
+
+  .sub-statement {
+    color: $accent-lt;
+    font-size: $normalfont;
+    font-family: $thin-font;
+    letter-spacing: 1.2px;
+    word-spacing: 5px;
+  }
+  
+  .quote {
+    padding-right: 10px;
+    font-size: $gigantic;
+  }
+}
+
+
 
 // a.nav-links:link,
 // a.nav-links:visited,

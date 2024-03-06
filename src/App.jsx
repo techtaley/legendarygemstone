@@ -1,3 +1,4 @@
+import React from 'react';
 import { RouterProvider, createBrowserRouter, Route, Outlet } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/about/About'

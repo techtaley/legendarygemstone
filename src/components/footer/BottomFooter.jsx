@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaCcMastercard, FaCcVisa, FaPaypal, FaStripeS } from "react-icons/fa6";
 import { GiNecklaceDisplay } from "react-icons/gi";
 

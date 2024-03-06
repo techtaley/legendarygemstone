@@ -24,14 +24,14 @@ export default function Categories() {
         //const res = await axios.get(BASEURL + `/sub-categories?populate=*`, {
         const res = await axios.get(BASEURL + `/categories?populate=*`, {
             header: {
-            Authorization: "bearer " + import.meta.env.VITE_APP_API_TOKEN,
+            Authorization: "bearer " + import.meta.env.VITE_API_TOKEN,
           },
         });
 
         const results = await res.data.data;
         setApiData(results);
 
-        //console.log(apiData[3].attributes.media[0].image)
+        //console.log(apiData[3].attributes.media[0]?.image)
 
         setLoading(true);
       } catch (error) {
@@ -51,19 +51,19 @@ export default function Categories() {
     <>
       {loading && (
         <section>
-          <div className="category-div">
+          {/* <div className="category-div">
             <h1>A few of your favorites</h1>  
-          </div>
+          </div> */}
 
           <div className="responsive categories">
             <div className="grid grid-col">
               <div className="grid grid-row">
                 <img
                   className="category-img"
-                  src={apiData[3].attributes.media[0].image} // 0/0 products/2 caps  -> sale
+                  src={`./../assets/${apiData[3].attributes.media[0]?.image}`}   //rings
                 />
                 <button className="btn light-bt category-btn"> 
-                  <Link to="products/12">
+                  <Link to="products/4">
                     {apiData[3].attributes.title} 
                   </Link>                 
                 </button>
@@ -72,10 +72,10 @@ export default function Categories() {
               <div className="grid grid-row">
                 <img
                   className="category-img"
-                  src={apiData[5].attributes.media[0].image}   // 1/0 products/1 boots  -> winter        
+                  src={`./../assets/${apiData[5].attributes.media[0]?.image}`}   //sale      
                 />
                 <button className="btn light-bt category-btn">
-                <Link to="products/14">
+                <Link to="products/6">
                     {apiData[5].attributes.title}
                   </Link>                 
                 </button>
@@ -86,10 +86,10 @@ export default function Categories() {
               <div className="grid grid-row">
                 <img
                   className="category-img"
-                  src={apiData[4].attributes.media[0].image} //2/0 products/1  sweater -> evening           
+                  src={`./../assets/${apiData[4].attributes.media[0]?.image}`} //knotted        
                 />
                 <button className="btn light-bt category-btn">
-                <Link to="products/13">
+                <Link to="products/5">
                     {apiData[4].attributes.title}
                   </Link>                 
                 </button>
@@ -101,11 +101,11 @@ export default function Categories() {
                 <div className="grid grid-col">
                   <img
                     className="category-img"
-                    src={apiData[8].attributes.media[0].image}  //3/0  products/2  casual  -> sporty          
+                    src={`./../assets/${apiData[2].attributes.media[0]?.image}`}  // earrings       
                   />
                   <button className="btn light-bt category-btn">      
-                  <Link to="products/17">
-                    {apiData[8].attributes.title}
+                  <Link to="products/3">
+                    {apiData[2].attributes.title}
                   </Link> 
                   </button>
                 </div>
@@ -113,10 +113,10 @@ export default function Categories() {
                 <div className="grid grid-col">
                   <div className="grid grid-row">
                     <img 
-                      src={apiData[6].attributes.media[0].image}  //  4/0  products/1 dresses -> summer        
+                      src={`./../assets/${apiData[6].attributes.media[0]?.image}`}  //  4/0  products/1 dresses -> summer        
                     />
                     <button className="btn light-bt category-btn"> 
-                    <Link to="products/15">
+                    <Link to="products/7">
                     {apiData[6].attributes.title}
                   </Link> 
                     </button>
@@ -127,10 +127,10 @@ export default function Categories() {
               <div className="grid grid-row">
                 <div className="grid grid-col-lg">
                   <img 
-                      src={apiData[7].attributes.media[0].image}  // 5/0  products/1  accessories -> business         
+                      src={`./../assets/${apiData[7].attributes.media[0]?.image}`}  // 5/0  products/1  accessories -> business         
                   />
                   <button className="btn light-bt category-btn">         
-                  <Link to="products/16">
+                  <Link to="products/12">
                     {apiData[7].attributes.title}
                   </Link> 
                   </button>

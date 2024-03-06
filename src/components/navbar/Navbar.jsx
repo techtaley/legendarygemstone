@@ -1,6 +1,9 @@
+import React from 'react';
 import { useState } from 'react'
 import { NavLink } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import LgLogo from '/assets/legendarygemstone-logo.jpg';
+import { useNavigate } from "react-router-dom";
 
 import {
   MdKeyboardArrowDown,
@@ -8,6 +11,7 @@ import {
   MdOutlinePersonOutline,
   MdOutlineShoppingCart,
   MdFavoriteBorder,
+  MdFavorite,
   MdMenu
 } from "react-icons/md";
 
@@ -48,7 +52,7 @@ const navData = [
   {
     id: "3",
     title: "Products",
-    link: "products/3",
+    link: "products/1",
     className: "",
   },
 ];
@@ -56,7 +60,14 @@ const navData = [
 export default function Navbar() {
   const [ openCart, setOpenCart ] = useState(false);
   const [ openMenu, setOpenMenu ] = useState(false);
-  const products = useSelector(store => store.cart.products)  
+  const products = useSelector(store => store.cart.products)
+  const [isFavorite, setIsFavorite] = useState(false);
+  const navigate = useNavigate();
+
+  const handleToggle = () => {
+    setIsFavorite(!isFavorite);
+    //navigate(`/products/${data.id}`);
+  }
 
   return (
     <div className="nav-menu">
@@ -73,8 +84,9 @@ export default function Navbar() {
      
       <div className="left">
           <NavLink to="/" className="logo">
-            <GiNecklaceDisplay className="icon md-dark-color" />
-            <h1 className="logo-text">My Shop</h1>
+            <img src={LgLogo} alt="logo photo" />
+            {/* <GiNecklaceDisplay className="icon md-dark-color" />
+            <h1 className="logo-text">My Shop</h1> */}
           </NavLink>
       </div>
 
@@ -92,14 +104,17 @@ export default function Navbar() {
             <MdMenu onClick={() => setOpenMenu(!openMenu)}/>
           </div>  
 
-          <div className="icons">          
+          {/* <div className="icons">          
               <MdOutlinePersonOutline className="icon" />
-              <MdFavoriteBorder className="icon" />
+              {!isFavorite ? <MdFavorite className="icon" onClick={ handleToggle && navigate(`/`)} /> 
+              : <MdFavoriteBorder className="icon" onClick={ handleToggle} />
+              }
               <div className="cartIcon" onClick={()=>setOpenCart(!openCart)}>
                 <MdOutlineShoppingCart className="icon" />
                 <span>{products.length}</span>
               </div>
-          </div>          
+          </div>           
+          */}
         </div>
 
         {openCart && <Cart /> }

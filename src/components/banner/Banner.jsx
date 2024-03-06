@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -11,26 +12,26 @@ const slides = [
   {
       id: 1,
       //image: "pexels-godisable-jacob-928000.jpg",
-      image:  "https://images.pexels.com/photos/928000/pexels-photo-928000.jpeg?auto=compress&cs=tinysrgb&w=2400",
-      alt: "Fashion for women",
-      attr: "Photo by Godisable Jacob", 
-      attrlink: "https://www.pexels.com/photo/woman-holding-bag-near-buildings-928000/"
+      image:  "https://lg-api.techtaleyportfolio.com/uploads/jade_bronze_pearl_optimized_92e97e2f4b.jpg",
+      alt: "jade bronze pearl jewelry set photo",
+      attr: "", 
+      attrlink: ""
   },
   {
       id: 2,
       //image: "pexels-iiii-iiii-69212.jpg",
-      "image": "https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&w=2400",
-      alt: "Fashion for men",
-      attr: "Photo by iiii iiii",
-      attrlink: "https://www.pexels.com/photo/man-wearing-black-and-red-checkered-long-sleeve-shirt-wearing-black-wayfarer-sunglasses-sitting-on-white-wooden-chair-69212/"
+      "image": "https://lg-api.techtaleyportfolio.com/uploads/carnelian_mother_of_pearl_set_optimized_56a4c49d6c.jpg",
+      alt: "mother of pearl jewelry set photo",
+      attr: "",
+      attrlink: ""
   },
   {
       id: 3,
       //image: "pexels-lumn-322207.jpg",
-      "image": "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&w=2400",
-      alt: "Accessories",
-      attr: "Photo by Lum3n",
-      attrlink: "https://www.pexels.com/photo/low-angle-view-of-shoes-322207/"
+      "image": "https://lg-api.techtaleyportfolio.com/uploads/tigerye_set_optimized_348ed320f0.jpg",
+      alt: "tiger eye jewelry set",
+      attr: "",
+      attrlink: ""
   },
 ]
 

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'  //redux toolkit allows you to push directly and change object because of immer
 
 const initialState = {
-  products: [],     //object that includes title, desc, price
+  products: [],     //object that includes title, desc, regular_price, sale_price
   // quantity: 0,
   // totalqty: 0,
   // totalprice: 0,

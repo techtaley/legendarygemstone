@@ -1,38 +1,34 @@
 
+import React from 'react';
 import './../../styles/main/main.css'
 import { Link } from  'react-router-dom';
 
 const categoryData = [
   {
     id: "1",
-    title: "Women",
+    title: "All",
     link: "products/1",
     className: "",
   },
   {
     id: "2",
-    title: "Men",
-    link: "products/2",
+    title: "New",
+    link: "products/13",
     className: "",
-  },
+  },      
   {
     id: "3",
-    title: "All",
-    link: "products/3",
+    title: "Sale",
+    link: "products/6",
     className: "",
   },
   {
     id: "4",
-    title: "Sale",
-    link: "products/12",
+    title: "Seasonal",
+    link: "products/7",
     className: "",
-  },  
-  {
-    id: "5",
-    title: "New Arrivals",
-    link: "products/18",
-    className: "",
-  },  
+  },
+
 ];
 
 const linkData = [

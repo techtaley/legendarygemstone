@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import "./contact.css"
+import React from 'react';
 
 
 export default function ContactInput ({e, handleChange, index}) {

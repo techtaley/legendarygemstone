@@ -19,6 +19,7 @@ GLOBAL CSS
 
 html {
   font-size: 100%;
+  font-family: "Oswald", sans-serif;
   height: 100%;
   scroll-behavior: smooth;
 }
@@ -110,8 +111,8 @@ p {
   margin-top: 30px;
 }
 .btn.darkbtn {
-  background-color: #c3bfbf;
-  color: #f5f5f5;
+  background-color: rgb(32, 106, 116);
+  color: #ffffff;
 }
 .btn.lightbtn {
   background-color: #d3d3d3;
@@ -119,9 +120,10 @@ p {
 }
 
 button {
-  background-color: #C46B12;
+  background-color: rgb(32, 106, 116);
   cursor: pointer;
   border-radius: 2px;
+  color: #ffffff;
 }
 
 img {
@@ -207,12 +209,35 @@ a.nav-link:hover {
   text-decoration: underline;
 }
 
+.statement {
+  color: rgb(32, 106, 116);
+  line-height: 1.5;
+  margin: 0 20%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.statement .cursive-script {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.25rem;
+}
+.statement .sub-statement {
+  color: rgb(187, 139, 16);
+  font-size: 1.25rem;
+  font-family: "PT Sans Narrow", sans-serif;
+  letter-spacing: 1.2px;
+  word-spacing: 5px;
+}
+.statement .quote {
+  padding-right: 10px;
+  font-size: 4rem;
+}
+
 .darkfont {
   color: #000000;
 }
 
 .brightfont {
-  color: #C46B12;
+  color: rgb(164, 228, 237);
 }
 
 .lightfont {
@@ -309,17 +334,17 @@ a.nav-link:hover {
 }
 
 .hrdark {
-  color: #2f4f4f;
+  color: rgb(32, 106, 116);
   height: 5px;
-  background-color: #2f4f4f;
-  border: 1px solid #2f4f4f;
+  background-color: rgb(32, 106, 116);
+  border: 1px solid rgb(32, 106, 116);
 }
 
 .hrbright {
-  color: #C46B12;
+  color: rgb(164, 228, 237);
   height: 5px;
-  background-color: #C46B12;
-  border: 1px solid #C46B12;
+  background-color: rgb(164, 228, 237);
+  border: 1px solid rgb(164, 228, 237);
 }
 
 .box-shaddow {

@@ -32,7 +32,7 @@ export default function Terms() {
 
         <p>If you have any questions about these terms and conditions, please contact us:</p><br />
 
-        <p><span className="bold">By email:</span> mystrapishop@email.com</p>
+        <p><span className="bold">By email:</span> info@legedaarygemstone.com</p>
         <p><span className="bold">By visiting this page on our website:</span> <Link className="footer-link" to="https://my-strapi-shop.techtaleyportfolio.com/contact">https://my-strapi-shop.techtaleyportfolio.com/contact</Link></p>
         <p><span className="bold">Last updated:</span> February 27, 2024</p>          
 

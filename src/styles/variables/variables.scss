@@ -5,14 +5,20 @@ $heading: 1.875rem;      	//subheading-30px
 $subheading: 1.563rem;      //subheading-25px
 $headline: 3rem;            //use for website sections, heading-40px
 $logo: 3.125rem;            //50px
-$gigantic: 5.250rem;        //84px
+$huge: 2.25rem;
+$gigantic: 3rem;        //84px
+
+//font-family
+$regular-font: "Oswald", sans-serif;
+$script-font: "Dancing Script", cursive;
+$thin-font: "PT Sans Narrow", sans-serif;
 
 //color
 $dark-dk: #000000;
 $dark-md: #333333;
 $dark-lt: #c3bfbf;
-$accent-dk: #2f4f4f;
-$accent-md: #C46B12;
+$accent-dk: rgb(32, 106, 116);
+$accent-md: rgb(164, 228, 237);
 $accent-lt: rgb(187, 139, 16);  
 $light-dk: #d3d3d3; 
 $light-md: #f5f5f5;

@@ -8,6 +8,8 @@ import { Link, useParams } from "react-router-dom";
 import { addToCart, removeItem } from "../../features/cart/cartReducer";
 import { useDispatch } from "react-redux";
 
+import './products.css';
+
 export default function SingleProduct() {
   const id = useParams().id  //gets the id of the page that was selected
   const [selectedId, setSelectedId] = useState(0);
@@ -27,7 +29,7 @@ export default function SingleProduct() {
       try {
         const res = await axios.get(BASEURL + `/products/${id}?populate=*`, {  //
           header: {
-            Authorization: "bearer " + import.meta.env.VITE_APP_API_TOKEN,
+            Authorization: "bearer " + import.meta.env.VITE_API_TOKEN,
           },
         });
 
@@ -58,6 +60,7 @@ export default function SingleProduct() {
                 <img
                   className="thumbnail-image"
                   src={pageAttributes.media[0]?.image}
+                  // src={`./../assets/${pageAttributes.media[0]?.image}`}
                   alt=""
                   onClick={() => setSelectedId(0)}
                 />  
@@ -74,7 +77,8 @@ export default function SingleProduct() {
 
             <div className="main-image">              
               <img 
-                src={pageAttributes.media[selectedId].image} 
+                // src={pageAttributes.media[selectedId].image}
+                src={`./../assets/${pageAttributes.media[selectedId].image}` }
                 alt=""                
               /> 
              
@@ -85,7 +89,18 @@ export default function SingleProduct() {
             <div className="product-desc">
               <h1>{pageAttributes.title}</h1>
 
-              <span>${pageAttributes.cost}</span>
+
+              {pageAttributes.sale_price 
+              ? 
+                <p>
+                  <span className="sale-price">${pageAttributes.regular_price}</span>
+                  <span>${pageAttributes.sale_price}</span>               
+                </p>
+              : 
+                <p>
+                  <span>${pageAttributes.regular_price}</span>
+                </p>
+              }
 
               <p>{pageAttributes.desc}</p>
 
@@ -114,7 +129,8 @@ export default function SingleProduct() {
                 id: apiData.id,
                 title: pageAttributes.title,
                 desc: pageAttributes.desc,
-                cost: pageAttributes.cost,
+                regular_price: pageAttributes.regular_price,
+                sale_price: pageAttributes.sale_price, 
                 media: pageAttributes.media,
                 quantity, //in the store and front end 
               }))}>

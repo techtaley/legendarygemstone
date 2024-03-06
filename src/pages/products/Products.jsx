@@ -1,3 +1,4 @@
+import React from 'react';
 //import { useState, useEffect } from "react";
 import { useState } from "react";
 import ProductList from "./ProductList";
@@ -8,8 +9,9 @@ import "./products.css";
 import { PiMagnifyingGlassBold } from "react-icons/pi";
 
 import axios from "axios";
-import { Link, useParams } from "react-router-dom"; 
+import { Link, useNavigate, useParams } from "react-router-dom"; 
 import useFetch from './../../hooks/useFetch'
+// import FavoriteList from './FavoriteList';
 
 export default function Products({type}) {
   const catId = parseInt(useParams().id);
@@ -20,8 +22,9 @@ export default function Products({type}) {
   const [targetValue, setTargetValue] = useState("")
 
   //1. populates sidebar only with the subcategories using id
-  //const { apiData, loading, error} = useFetch(`/sub-categories?filters[categories][id][$eq]=${catId}`)  
   const { apiData, loading, error} = useFetch(`/sub-categories?filters[categories][id][$eq]=${catId}`)  
+
+  const navigate  = useNavigate();
 
 //get value of sidebar element checkbox, radio, button  
  const handleChange = e => {
@@ -48,13 +51,8 @@ export default function Products({type}) {
     <>
         <section className="section products responsive">
           <div className="left-side">
-            <div className="search-div">
-                <input type="text" className="search-input"  placeholder="Search for a product" onChange={handleChange}/>
-                {/* <PiMagnifyingGlassBold className="icon" /> */}
-            </div>
-
             <div className="filterItem">
-              <h2>Product Categories</h2> 
+              <h2>Filter Categories</h2> 
 
               {apiData?.map(cat =>              
                 <div className="inputItem" key={cat.id}>
@@ -89,11 +87,32 @@ export default function Products({type}) {
           </div>
 
           <div className="right-side">
+          {/*             
+          <div className="statement center">
+            <h2 className="cursive-script">You know the world is a magical place with mother earth grows her own jewelry where is this quote from</h2>
+          </div>              
+          */}
+
+          <div className="product-nav-div">
+            {/* <Link className="product-nav-link" to="/products/1">all</Link> */}
+            <Link className="product-nav-link" to="/products/12">sets</Link>
+            <Link className="product-nav-link" to="/products/3">earrings</Link>
+            <Link className="product-nav-link" to="/products/4">rings</Link>
+            <Link className="product-nav-link" to="/products/6">sale</Link>
+          </div>   
+         
+          
+          <div className="search-div">
+                <input type="text" className="search-input"  placeholder="Search for a product" onChange={handleChange}/>
+                {/* <PiMagnifyingGlassBold className="icon" /> */}
+            </div>            
             <div className="right-img marginbtm30">
                   <img
                     className="product-img"
-                    src="https://images.pexels.com/photos/179909/pexels-photo-179909.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                    // src={bannerImg[0].media[0].image}
+                    src="https://lg-api.techtaleyportfolio.com/uploads/jade_bronze_pearl_optimized_92e97e2f4b.jpg"
+                    //src="https://lg-api.techtaleyportfolio.com/uploads/carnelian_mother_of_pearl_set_optimized_56a4c49d6c.jpg"
+                    // src="https://images.pexels.com/photos/179909/pexels-photo-179909.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    // src={bannerImg[0].media[0].url}
                     alt=""
                   />
             </div>
@@ -101,8 +120,12 @@ export default function Products({type}) {
             <section className="product-list section">              
               <ProductList catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCatIds} />
               {targetValue !== "" &&               
-              <SearchList catId={catId} query={searchQuery} maxPrice={maxPrice} sort={sort} subCats={selectedSubCatIds} />
+               <SearchList catId={catId} query={searchQuery} maxPrice={maxPrice} sort={sort} subCats={selectedSubCatIds} />
               }
+              {/* {targetValue !== "" &&               
+               <FavoriteList catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCatIds} />
+              } */}
+
             </section>                          
           </div>
         </section>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import useFetch from './../../hooks/useFetch';
 import Card from "./../../pages/products/Card";
@@ -8,7 +9,7 @@ import { Link, useParams } from "react-router-dom";
 
 export default function SearchList({query, maxPrice, sort, subCats}) {
 
-    const { apiData, loading, error} = useFetch(`/products?populate=*&filters[desc][$contains]=${query}&sort=cost:${sort}&filters[cost][$lte]=${maxPrice}`);
+    const { apiData, loading, error} = useFetch(`/products?populate=*&filters[desc][$contains]=${query}&sort=regular_price:${sort}&filters[regular_price][$lte]=${maxPrice}`);
 
     return (
         <>
