@@ -21,20 +21,20 @@ export default function Products({type}) {
   const [searchQuery, setSearchQuery] = useState([])
   const [targetValue, setTargetValue] = useState("")
 
-  //1. populates sidebar only with the subcategories using id
+  //1. populates sidebar only with the subcategories using id - fetch all subcategories (stones) then filter by categories (sets, necklace,...)
   const { apiData, loading, error} = useFetch(`/sub-categories?filters[categories][id][$eq]=${catId}`)  
 
   const navigate  = useNavigate();
 
-//get value of sidebar element checkbox, radio, button  
+//get checked status and value of sidebar element checkbox, radio, button  
  const handleChange = e => {
-  const value = e.target.value;                              //value is cat.id
+  const value = e.target.value;             //value is the cat.id
   const isChecked = e.target.checked;     
 
     setSelectedSubCatIds(                      
-        isChecked                                             //if checked, display product subcategories
+        isChecked                                             //if checked, add cat.id to the list & display subcategories (on right)
       ? [...selectedSubCatIds, value]                         //display catId and subcategory products for the selected category
-      : [selectedSubCatIds.filter((cat) => cat !== value)]    //if not checked display products from main categories
+      : [selectedSubCatIds.filter((cat) => cat !== value)]    //if not checked, remove cat.id from list but display other subcategories
     )
 
      setSearchQuery(value)
@@ -87,23 +87,22 @@ export default function Products({type}) {
           </div>
 
           <div className="right-side">  
+          <div className="statement center">
+            <h3 className="cursive-script product">Simple enough for everyday and perfect for special occasions.</h3>
+          </div>                            
+
 
           <div className="product-nav-div">
-            {/* <Link className="product-nav-link" to="/products/1">all</Link> */}
             <Link className="product-nav-link" to="/products/12">sets</Link>
             <Link className="product-nav-link" to="/products/3">earrings</Link>
             <Link className="product-nav-link" to="/products/4">rings</Link>
             <Link className="product-nav-link" to="/products/6">sale</Link>
-          </div>                    
+          </div>    
           
             <div className="search-div">
                 <input type="text" className="search-input"  placeholder="Search for a product" onChange={handleChange}/>
                 {/* <PiMagnifyingGlassBold className="icon" /> */}
-            </div> 
-
-          <div className="statement center">
-            <h3 className="cursive-script product">Simple enough for everyday and perfect for special occasions.</h3>
-          </div>              
+            </div>              
                          
             <div className="right-img marginbtm30">
                   <img

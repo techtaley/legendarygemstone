@@ -11,14 +11,7 @@ export default function ProductList({ catId, maxPrice, sort, subCats }) {
 
   const navigate = useNavigate();
 
-  const { apiData, loading, error } = useFetch(`/products?populate=*
-    &filters[categories][id]=${catId}${subCats.map(
-    (item) => `
-    &filters[sub_categories][id][$eq]=${item}`
-  )}
-    &filters[regular_price][$lte]=${maxPrice}
-    &sort=regular_price:${sort}
-    `);
+  const { apiData, loading, error } = useFetch(`/products?populate=*&filters[categories][id]=${catId}${subCats.map((item) => `&filters[sub_categories][id][$eq]=${item}`)}&filters[regular_price][$lte]=${maxPrice}&sort=regular_price:${sort}`);
 
 
   //    &filters[regular_price][$lte]=${maxPrice}
