@@ -9,7 +9,8 @@ import { Link, useParams } from "react-router-dom";
 
 export default function SearchList({query, maxPrice, sort, subCats}) {
 
-    const { apiData, loading, error} = useFetch(`/products?populate=*&filters[desc][$contains]=${query}&sort=regular_price:${sort}&filters[regular_price][$lte]=${maxPrice}`);
+    const { apiData, loading, error} = useFetch(`
+    /products?populate=*&filters[desc][$contains]=${query}`);
 
     return (
         <>

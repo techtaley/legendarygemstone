@@ -160,6 +160,11 @@ header .logo {
   font-size: 2rem;
 }
 
+.logo-letter-img {
+  height: 100px;
+  width: auto;
+}
+
 .flexcolumn {
   display: flex;
   flex-direction: column;
@@ -249,6 +254,7 @@ a.nav-link:hover {
 
 .center {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .justify {

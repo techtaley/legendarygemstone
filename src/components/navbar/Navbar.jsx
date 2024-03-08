@@ -104,17 +104,17 @@ export default function Navbar() {
             <MdMenu onClick={() => setOpenMenu(!openMenu)}/>
           </div>  
 
-          {/* <div className="icons">          
-              <MdOutlinePersonOutline className="icon" />
+          <div className="icons">          
+              {/* <MdOutlinePersonOutline className="icon" />
               {!isFavorite ? <MdFavorite className="icon" onClick={ handleToggle && navigate(`/`)} /> 
               : <MdFavoriteBorder className="icon" onClick={ handleToggle} />
-              }
+              } */}
               <div className="cartIcon" onClick={()=>setOpenCart(!openCart)}>
                 <MdOutlineShoppingCart className="icon" />
                 <span>{products.length}</span>
               </div>
           </div>           
-          */}
+         
         </div>
 
         {openCart && <Cart /> }

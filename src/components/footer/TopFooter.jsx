@@ -69,14 +69,14 @@ const footerData = [
     id: "1",
     title: "About",
     link: "about",
-    desc: "I integrate quality and durability in each design, while highlighting the unqiue shape and earthy tone of the gemstone.   With Legendary Gemstone customers can always expect expressive, timeless, and versatile jewelry that is simple enough to wear every day and perfect for special occasions!",
+    desc: "Quality and durability is integrated into each design, while highlighting the unqiue shape and earthy tone of the gemstone.   With Legendary Gemstone customers can always expect expressive, timeless, and versatile jewelry that is simple enough to wear every day and perfect for special occasions!",
     className: "",
   },
   {
     id: "2",
     title: "Contact",
     link: "contact",
-    desc: "If you have any questions about these terms and conditions, please contact us by email at info@legendaarygemstone.com or by visiting this page on our website at https://lg-shop.techtaleyportfolio.com/contact"
+    desc: "If you have any questions about these terms and conditions, please contact us by email at info@legendarygemstone.com or by visiting this page on our website at https://lg-shop.techtaleyportfolio.com/contact"
   },
 ]
 

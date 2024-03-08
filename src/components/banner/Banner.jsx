@@ -8,11 +8,12 @@ import './banner.css'
 import { FaQuoteRight } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+
 const slides = [
   {
       id: 1,
       //image: "pexels-godisable-jacob-928000.jpg",
-      image:  "https://lg-api.techtaleyportfolio.com/uploads/jade_bronze_pearl_optimized_92e97e2f4b.jpg",
+      image:  "https://lg-api.techtaleyportfolio.com/uploads/carnelian_mother_of_pearl_set_optimized_5cce32bad8.jpg",
       alt: "jade bronze pearl jewelry set photo",
       attr: "", 
       attrlink: ""
@@ -20,7 +21,7 @@ const slides = [
   {
       id: 2,
       //image: "pexels-iiii-iiii-69212.jpg",
-      "image": "https://lg-api.techtaleyportfolio.com/uploads/carnelian_mother_of_pearl_set_optimized_56a4c49d6c.jpg",
+      "image": "https://lg-api.techtaleyportfolio.com/uploads/jade_bronze_pearl_optimized_0b61cf0ae9.jpg",
       alt: "mother of pearl jewelry set photo",
       attr: "",
       attrlink: ""
@@ -28,7 +29,7 @@ const slides = [
   {
       id: 3,
       //image: "pexels-lumn-322207.jpg",
-      "image": "https://lg-api.techtaleyportfolio.com/uploads/tigerye_set_optimized_348ed320f0.jpg",
+      "image": "https://lg-api.techtaleyportfolio.com/uploads/tigerye_set_optimized_d2dd116df7.jpg",
       alt: "tiger eye jewelry set",
       attr: "",
       attrlink: ""
@@ -36,6 +37,36 @@ const slides = [
 ]
 
 export default function Banner(){
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       //const res = await axios.get(BASEURL + `/sub-categories?populate=*`, {
+  //       const res = await axios.get(BASEURL + `/banner?populate=*`, {
+  //           header: {
+  //           Authorization: "bearer " + import.meta.env.VITE_API_TOKEN,
+  //         },
+  //       });
+
+  //       const results = await res.data.data;
+  //       setApiData(results);
+
+  //       //console.log(apiData[3].attributes.media[0]?.image)
+
+  //       console.log(apiData)
+
+  //       setLoading(true);
+  //     } catch (error) {
+  //       console.log(error);
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, [loading]);
+
+
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);

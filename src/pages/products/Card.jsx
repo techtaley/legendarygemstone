@@ -6,6 +6,8 @@ import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorite } from "../../features/favorite/favoriteReducer";
 
+  const IMAGE_URL = import.meta.env.VITE_UPLOAD_URL
+
 export default function Card({ data }) {
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false)
@@ -21,14 +23,16 @@ export default function Card({ data }) {
     //setFavoriteProducts() 
   }
 
+  //console.log(data.attributes.url.data[0].attributes.formats.medium.hash.url)
+  //console.log(`https://lg-shop.techtaleyportfolio.com/${data.attributes.url.data[0].attributes.formats.medium.hash.url}`)
+  //console.log(`https://lg-api.techtaleyportfolio.com/${data.attributes.url.data[0].attributes.formats.medium.url}`)
+
   return ( 
       <div className="product-list-div" key={data.id}>
           <img
             className="product-list-img"
-            //src={data.attributes.media[0]?.url}
-            //src={`https://lg-api.techtaleyportfolio.com/uploads/${data.attributes.media[0]?.url}`}
-            
-            src={`./../../../assets/${data.attributes.media[0]?.image}`}
+            //src={`./../../../assets/${data.attributes.media[0]?.image}`}
+            src={IMAGE_URL + data.attributes.media[0]?.url}
             alt={`${data.attributes.title} photo`}
             onClick={() => navigate(`/single-product/${data.id}`)}
           />

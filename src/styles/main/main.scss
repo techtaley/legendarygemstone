@@ -174,6 +174,10 @@ header {
     }
 }
 
+.logo-letter-img {
+  height: 100px;
+  width: auto;
+}
 
 .flexcolumn {
   @include flexdisplay(column, flex-start, flex-start);  //used as a header
@@ -280,6 +284,7 @@ a.nav-link:hover {
 //alignment
 .center {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .justify {

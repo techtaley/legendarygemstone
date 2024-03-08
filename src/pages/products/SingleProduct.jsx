@@ -19,6 +19,7 @@ export default function SingleProduct() {
   const [loading, setLoading] = useState(false);
   const [pageAttributes, setPageAttributes] = useState();  //media, pric, title 
 
+  const IMAGE_URL = import.meta.env.VITE_UPLOAD_URL
   const BASEURL = import.meta.env.VITE_PRODUCTION_API_URL;
   //const BASEURL = import.meta.env.VITE_DEVELOPMENT_API_URL ||  import.meta.env.VITE_PRODUCTION_API_URL
 
@@ -59,8 +60,8 @@ export default function SingleProduct() {
               {pageAttributes.media[0] &&
                 <img
                   className="thumbnail-image"
-                  src={pageAttributes.media[0]?.image}
-                  // src={`./../assets/${pageAttributes.media[0]?.image}`}
+                  src={IMAGE_URL + pageAttributes.media[0]?.url}
+                  //src={`./../assets/${pageAttributes.media[0]?.image}`}
                   alt=""
                   onClick={() => setSelectedId(0)}
                 />  
@@ -68,7 +69,9 @@ export default function SingleProduct() {
               {pageAttributes.media[1] &&
                 <img
                   className="thumbnail-image"
-                  src={pageAttributes.media[1]?.image}
+                  src={IMAGE_URL + pageAttributes.media[1]?.url}                  
+                  //src={`./../assets/${pageAttributes.media[1]?.image}`}
+                  // src={pageAttributes.media[1]?.image}
                   alt=""
                   onClick={() => setSelectedId(1)}
                 />                
@@ -78,7 +81,8 @@ export default function SingleProduct() {
             <div className="main-image">              
               <img 
                 // src={pageAttributes.media[selectedId].image}
-                src={`./../assets/${pageAttributes.media[selectedId].image}` }
+                //src={`./../assets/${pageAttributes.media[selectedId].image}` }
+                src={IMAGE_URL + pageAttributes.media[selectedId]?.url}
                 alt=""                
               /> 
              

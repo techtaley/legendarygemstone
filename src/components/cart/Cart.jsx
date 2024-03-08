@@ -25,6 +25,8 @@ export default function Cart() {
     return total.toFixed(2);    
   } 
 
+  const IMAGE_URL = import.meta.env.VITE_UPLOAD_URL
+
   //const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHER_KEY);
   const stripePromise = loadStripe('pk_test_51OcIhCHK9coUp7hTlg2pfZ68Htb2S8Y5HpY1ih9vL9BvmBmfhbAmPwWXKIRzvHIe5peM0ULhPbDExCDH0d8Mm5JO00Dhqd9mtU');
 
@@ -52,12 +54,15 @@ export default function Cart() {
         {products?.map(product => 
             <div className="data" key={product.id}>
 
-                <img src={product.media[0].image} alt={product.title} />
+                <img src={IMAGE_URL + product.media[0]?.url} alt={product.title} />
 
                 <div className="details">
                     <h3>{product.title}</h3>
-                    <p className="desc">{product.desc.substring(0, 100)}</p>
-                    <p className="price">{product.quantity} x ${product.cost}</p>
+                    {/* <p className="desc">{product.desc.substring(0, 100)}</p> */}
+                    {product.sale_price                     
+                      ? <p className="price">{product.quantity} x ${product.sale_price}</p> 
+                      : <p className="price">{product.quantity} x ${product.reg_price}</p> 
+                    }
                 </div>
                 <MdDelete className="delete-icon" onClick={() => dispatch(removeItem(product.id))}/>
             </div>    

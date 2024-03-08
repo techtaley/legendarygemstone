@@ -20,11 +20,12 @@
     height: auto;
       
     .left {
-      width: 160px;
+      width: 250px;
       margin-bottom: 0px;
 
       .logo {
         @include flexdisplay(column, center, center); 
+
                 
         .icon {
             font-size: 60px;

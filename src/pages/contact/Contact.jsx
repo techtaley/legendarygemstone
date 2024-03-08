@@ -25,13 +25,13 @@ const contactData = [
     id: 2,
     icon: <MdOutlineEmail className="icon"/>,
     title: "Email",
-    para: "my-strap-shop@email.com",
+    para: "info@legendarygemstone.com",
   },
   {
     id: 3,
     icon: <MdOutlineBusiness className="icon"/>,
     title: "Address",
-    para: "8735 Madison Ave, New York City 21211",
+    para: "Queens, NY",
   }    
 ]
 

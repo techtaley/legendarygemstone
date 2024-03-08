@@ -6,15 +6,16 @@ import Card from "./Card";
 
 import "./products.css";
 
-export default function ProductList({ catId, maxPrice, sort, subCats }) {
+export default function ProductList({ catId, maxPrice, sort, subCatIds,query }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const navigate = useNavigate();
 
-  const { apiData, loading, error } = useFetch(`/products?populate=*&filters[categories][id]=${catId}${subCats.map((item) => `&filters[sub_categories][id][$eq]=${item}`)}&filters[regular_price][$lte]=${maxPrice}&sort=regular_price:${sort}`);
-
-
-  //    &filters[regular_price][$lte]=${maxPrice}
+  const { apiData, loading, error } = useFetch(  //action taken on one category
+    `/products?populate=*&filters[categories][id]=${catId}${subCatIds.map(  //map through cat ids get cat id
+      (catid) => `&filters[sub_categories][id][$eq]=${catid}`)}
+      &filters[regular_price][$lte]=${maxPrice}&sort=regular_price:${sort}`);
+      
   return (
     <>
         {loading ? " " : apiData?.map(data =>    

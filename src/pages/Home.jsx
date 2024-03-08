@@ -6,7 +6,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div>
+    <div className="main">
       <div className="statement">
         <h2 className="cursive-script">Unqiuely Handcrafted Jewelry</h2>
         <p className="sub-statement">Earthy. Expressive. Legendary.</p>
