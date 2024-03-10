@@ -117,7 +117,7 @@ export default function Contact() {
     <section className="margin70">
       <h2 className="center darkfont">Contact Form</h2>
 
-      <div className="hero left-hero">
+      <div className="hero left-hero contact responsive">
 
         <div className="googlemap">
           <iframe
@@ -174,7 +174,7 @@ export default function Contact() {
         </div>        
       </div>
 
-      <div className="hero multi-box-row">
+      <div className="hero multi-box-row contact responsive">
         {contactData.map(item =>
           <Box data={item} />
         )}

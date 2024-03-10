@@ -9,11 +9,11 @@ GLOBAL CSS
   box-sizing: border-box;
 }
 
-.defaults div, .defaults h1, .defaults h2, .defaults h3, .defaults li {
-  margin: 8px 0;
-  padding: 8px 0;
+.defaults div, .defaults h1, .defaults h2, .defaults h3 {
+  margin: 15px 0;
+  padding: 15px 0;
 }
-.defaults p, .defaults li {
+.defaults li {
   line-height: 1.5;
 }
 
@@ -202,18 +202,6 @@ header .logo {
   justify-content: flex-end;
 }
 
-a.nav-link:link,
-a.nav-link:visited,
-a.nav-link:active {
-  color: red;
-  text-decoration: none;
-}
-
-a.nav-link:hover {
-  color: #333333;
-  text-decoration: underline;
-}
-
 .statement {
   color: rgb(32, 106, 116);
   line-height: 1.5;
@@ -223,7 +211,7 @@ a.nav-link:hover {
 }
 .statement .cursive-script {
   font-family: "Dancing Script", cursive;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .statement .cursive-script.product {
   font-size: 1.563rem;
@@ -237,7 +225,7 @@ a.nav-link:hover {
 }
 .statement .quote {
   padding-right: 10px;
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 .darkfont {
@@ -269,6 +257,11 @@ a.nav-link:hover {
 
 .right {
   text-align: right;
+  margin-bottom: 60px;
+}
+
+.center {
+  text-align: center;
   margin-bottom: 60px;
 }
 
@@ -418,5 +411,23 @@ a.nav-link:hover {
   .responsive.bottom-footer {
     flex-direction: column;
     align-items: center;
+  }
+  .responsive.contact {
+    flex-direction: column;
+    align-items: center;
+  }
+  .statement .cursive-script {
+    font-size: 1.875rem;
+  }
+  .statement .cursive-script.product {
+    font-size: 1.563rem;
+  }
+  .statement .quote {
+    padding-right: 10px;
+    font-size: 2.5rem;
+  }
+  .logo {
+    font-size: 1rem;
+    color: #c3bfbf;
   }
 }/*# sourceMappingURL=main.css.map */

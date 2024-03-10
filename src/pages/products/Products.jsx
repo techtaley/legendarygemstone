@@ -52,7 +52,7 @@ export default function Products({ type }) {
       <section className="section products responsive">
         <div className="left-side">
           <div className="filterItem">
-            <h2>Filter Categories</h2>
+            <h2>Filter Gemstone</h2>
 
             {apiData?.map((cat) => (
               <div className="inputItem" key={cat.id}>

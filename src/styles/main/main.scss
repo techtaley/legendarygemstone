@@ -13,12 +13,12 @@ GLOBAL CSS
 }
 
 .defaults {  
-  div, h1, h2, h3, li {
-    margin: 8px 0;
-    padding: 8px 0;  
+  div, h1, h2, h3 {
+    margin: 15px 0;
+    padding: 15px 0;  
   }
 
-  p, li {
+  li {
     line-height: 1.5;
   }
 }
@@ -215,24 +215,12 @@ header {
     }       
 }
 
-a.nav-link:link,
-a.nav-link:visited,
-a.nav-link:active {
-  color: red;
-  text-decoration: none;
-}
-a.nav-link:hover {
-  color: $dark-md;
-  text-decoration: underline;
-} 
-
 .statement {
   color: $accent-dk;
   line-height: 1.5;
   margin: 0 20%;
   text-align: center;
   margin-bottom: 30px;
-  //border: 1px dotted red;
  
   .cursive-script {
     font-family: $script-font;
@@ -253,11 +241,9 @@ a.nav-link:hover {
   
   .quote {
     padding-right: 10px;
-    font-size: $gigantic;
+    font-size: $huge;
   }
 }
-
-
 
 // a.nav-links:link,
 // a.nav-links:visited,
@@ -299,8 +285,15 @@ a.nav-link:hover {
 
 .right {
     text-align: right;
-    margin-bottom: 60px;         
-}  
+    margin-bottom: 60px; 
+    //border: 1px dotted red;        
+}
+
+.center {
+  text-align: center;
+  margin-bottom: 60px; 
+  //border: 1px dotted red;        
+}
 
 .bold { 
     font-weight: bold;
@@ -430,7 +423,7 @@ a.nav-link:hover {
         .right-side {
           .product-list {
             @include flexdisplay(row, center, flex-start);
-          }
+          }          
         }
       }
 
@@ -458,7 +451,33 @@ a.nav-link:hover {
         align-items: center;
       }
 
-    }      
+      &.contact {
+        flex-direction: column;
+        align-items: center;
+      }
+
+
+    }  
+    
+    .statement {
+     
+      .cursive-script {
+        font-size: $heading;
+    
+        &.product {
+          font-size: $subheading;
+        }
+      }      
+      .quote {
+        padding-right: 10px;
+        font-size: $huge;
+      }
+    }   
+    
+    .logo {
+      font-size: 1rem;
+      color: $dark-lt;
+  }
 }
 
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaCcMastercard, FaCcVisa, FaPaypal, FaStripeS } from "react-icons/fa6";
 import { GiNecklaceDisplay } from "react-icons/gi";
-//import { LgLogo } from '/public/assets/legendarygemstone-logo.jpg';
 //import {  FaCcStripe  } from "react-icons/fa";
+
+const IMAGE_URL=import.meta.env.VITE_UPLOAD_URL
+const IMG_UPLOAD=import.meta.env.VITE_IMG_UPLOAD
 
 import './footer.css';
 
@@ -51,7 +53,7 @@ export default function BottomFooter() {
   return (
     <div className="bottom-footer responsive ">  
       <div>
-        <img className="logo-letter-img" src={`./../../assets/legendarygemstone-logo.png`} alt="logo photo" />
+        <img className="logo-letter-img" src={IMG_UPLOAD + `legendarygemstone_logo_2f8b7b7f47.png`} alt="logo photo" />
       </div>    
 
       <div className="social-icons">

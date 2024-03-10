@@ -2,8 +2,9 @@
 
 .banner-container {
   justify-content: flex-start;
-  height: 400px;
+  height: 300px;
   width: 100%;
+  margin-bottom: 0px;
   //margin-top: 2%;
 
   .banner-img { 
@@ -20,7 +21,6 @@
 
 .prevnav {
   @include flexdisplay(row, space-evenly, flex-start); 
-
   gap: 200px;
 
   .leftbtn, .rightbtn {
@@ -30,18 +30,20 @@
     padding: 10px; 
     background: rgba(0, 0, 0, .3);
     border-radius: 3px;
-    margin-top: -15%;
+    margin-top: -10%;
   }
 }
 
 
-// @media only screen and (max-width: 992px) {
-//   .banner-img { 
-//     max-width: 992px;
-//     width: 100%;
+@media only screen and (max-width: 992px) {
+  .banner-container {
+    height: 200px;
+  }
 
-//     .prevnav {
-//       width: 100%;
-//     }
-//   }
-// }
+  .prevnav {
+    .leftbtn, .rightbtn {
+      margin-top: -17%;
+    }
+  }  
+}
+

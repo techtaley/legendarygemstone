@@ -22,3 +22,5 @@ create_intent.js
 /public
 .env
 /package-lock.json
+strapi urls.txt
+

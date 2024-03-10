@@ -17,8 +17,7 @@ export default function Categories() {
   const [loading, setLoading] = useState(false);
 
   const BASEURL = import.meta.env.VITE_PRODUCTION_API_URL
-  //const UPLOADURL = import.meta.env.VITE_DEVELOPMENT_UPLOAD_URL
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {

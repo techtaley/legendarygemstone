@@ -1,0 +1,266 @@
+@import './../../styles/variables/variables.scss';
+@import './navbar.css';
+
+//nav only - import in header
+// nav {
+//     @include flexdisplay(row, flex-end, center);  
+//     gap: 20px; 
+//     color: $dark-md; 
+//   }
+  
+  //three-split-nav
+  .nav-menu {
+    @include flexdisplay(row, space-between, center);  
+    color: $dark-md;
+    width: 100%;
+    padding: 3% 3% 0 3%;
+    margin-bottom: 20px;
+    height: auto;
+
+    .left {
+      margin-bottom: 0px;
+      flex: 1;
+
+      .logo {
+        @include flexdisplay(column, center, center); 
+        width: 200px;
+
+        .icon {
+            font-size: 60px;
+            color: $dark-md;
+          }  
+      
+          .logo-text {
+              color: $dark-md;
+              font-size: 25px;
+          }
+      }
+    }
+  
+    // .middle {
+    //   @include flexdisplay(row, space-evenly, center);  //used as a 
+    //   color: $dark-dk;
+    //   flex: 1;      
+    // }
+  
+    .right {
+      @include flexdisplay(column, flex-end, flex-end);  //used as a header
+      padding-right: 1%;  
+      flex: 1;
+      gap: 20px; 
+      
+
+      .icons {
+        align-self: flex-end;
+        font-size: $huge;
+      
+        &.menu-icon {
+          display: none;
+        }
+      }      
+
+      .nav {
+        @include flexdisplay(row, flex-end, center);  //used as a header
+        cursor: pointer;          
+        gap: 20;
+
+        .nav-menu {
+          @include flexdisplay(row, center, center);  //used as a header
+          gap: 20px;
+  
+          .nav-links {
+            margin-left: 10px;
+            font-weight: bold;
+          }  
+    
+          .nav-link {
+            color: $dark-md;
+          }
+  
+          a.nav-link:link,
+          a.nav-link:visited,
+          a.nav-link:active {
+            color: $dark-md;
+            text-decoration: none;
+          }
+          a.nav-link:hover {
+            color: $dark-md;
+            text-decoration: underline;
+          } 
+  
+        }
+          
+        .nav-icons {
+          @include flexdisplay(row, center, center);  //used as a header
+          font-size: 20px;
+          gap: 20px;
+  
+          .cartIcon {
+            @include flexdisplay(row, flex-start, flex-start);  //used as a header
+            position: relative;
+            z-index: 9999;
+    
+            span {
+              @include flexdisplay(row, center, center);  //used as a header
+              font-size: 12px;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background-color: $light-md;
+              position: absolute;
+              right: -13px;
+              top: -13px;          
+            }
+            //@include flexdisplay(row, flex-start, flex-start);  //used as a header
+          }
+        }
+      }     
+    }    
+  }
+
+.product-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    right: 20px;  
+    top: 80px;  //from the previous element
+    z-index: 999; 
+    background-color:antiquewhite; 
+    box-shadow: 5px 5px 5px 5px #888888;
+    padding: 20px;
+    border-radius: 3px;;
+
+   .data {
+      display: flex;
+
+      img {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 10px;
+          margin-right: 10px;
+      }
+      .details {
+          h3 {
+              margin-bottom: 30px;
+          }
+
+          .desc {
+              color: #6666;
+          }
+
+          .price {
+              color: rgb(59, 59, 173);
+              font-weight: bold;
+          }
+
+      }
+
+      .delete-icon {
+          display: inline-block;
+          width: 100px;
+          margin: 0 auto;
+          color: #600;
+      }
+   }
+
+   .total {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+
+    .cart-btn {
+        width: 150px;
+        height: 30px;
+    }
+
+    .reset {
+        color: red;
+        font-size: small;
+        cursor: pointer;
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+.nav-menu {
+  .left {
+    .logo {
+      width: 150px;  
+    }
+  }
+
+  .right {
+    @include flexdisplay(column, flex-end, flex-end);  //used as a header
+    padding-right: 1%;  
+    flex: 1;
+    gap: 20px; 
+    
+    .icons {
+      &.menu-icon {
+        display: inline-block;
+      }
+    }      
+
+    .nav {
+      @include flexdisplay(column-reverse, flex-end, center);  //used as a header
+      cursor: pointer;          
+      gap: 20;
+
+      .nav-menu {
+        @include flexdisplay(column, center, center);  //used as a header
+        gap: 20px;
+        width: 300px;
+
+        .nav-links {
+          margin-left: 10px;
+          font-weight: bold;
+        }  
+  
+        .nav-link {
+          color: $dark-md;
+        }
+
+        a.nav-link:link,
+        a.nav-link:visited,
+        a.nav-link:active {
+          color: $dark-md;
+          text-decoration: none;
+        }
+
+        a.nav-link:hover {
+          color: $dark-md;
+          text-decoration: underline;
+        } 
+      }
+        
+      .nav-icons {
+        @include flexdisplay(row, center, center);  //used as a header
+        font-size: 20px;
+        gap: 20px;
+        margin-bottom: 20px;        
+
+        .cartIcon {
+          @include flexdisplay(row, flex-start, flex-start);  //used as a header
+          position: relative;
+          z-index: 9999;
+  
+          span {
+            @include flexdisplay(row, center, center);  //used as a header
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $light-md;
+            position: absolute;
+            right: -13px;
+            top: -13px;          
+          }
+          //@include flexdisplay(row, flex-start, flex-start);  //used as a header
+        }
+      }
+    }     
+  }     
+}  
+}           

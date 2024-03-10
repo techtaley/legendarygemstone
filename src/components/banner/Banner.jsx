@@ -8,7 +8,6 @@ import './banner.css'
 import { FaQuoteRight } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-
 const slides = [
   {
       id: 1,

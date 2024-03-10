@@ -10,29 +10,28 @@
   margin: 0;
   color: #333333;
   width: 100%;
-  padding: 3%;
-  height: auto;
+  padding: 3% 3% 0 3%;
 }
-.nav-menu .left {
+.nav-menu .left-nav {
   width: 250px;
   margin-bottom: 0px;
 }
-.nav-menu .left .logo {
+.nav-menu .left-nav .logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
 }
-.nav-menu .left .logo .icon {
+.nav-menu .left-nav .logo .icon {
   font-size: 60px;
   color: #333333;
 }
-.nav-menu .left .logo .logo-text {
+.nav-menu .left-nav .logo .logo-text {
   color: #333333;
   font-size: 25px;
 }
-.nav-menu .right {
+.nav-menu .right-nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -41,14 +40,7 @@
   width: 100%;
   padding-right: 1%;
 }
-.nav-menu .right .nav-links {
-  margin-left: 10px;
-  font-weight: bold;
-}
-.nav-menu .right .nav-link {
-  color: #333333;
-}
-.nav-menu .right .icons {
+.nav-menu .right-nav .icons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -58,15 +50,15 @@
   font-size: 20px;
   cursor: pointer;
 }
-.nav-menu .right .icons .icon {
+.nav-menu .right-nav .icons .icon {
   margin-left: 20px;
 }
-.nav-menu .right .icons.menu-icon {
+.nav-menu .right-nav .icons.menu-icon {
   font-size: 50px;
   align-self: flex-end;
   display: none;
 }
-.nav-menu .right .icons .cartIcon {
+.nav-menu .right-nav .icons .cartIcon {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -75,7 +67,7 @@
   position: relative;
   z-index: 9999;
 }
-.nav-menu .right .icons .cartIcon span {
+.nav-menu .right-nav .icons .cartIcon span {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -89,6 +81,42 @@
   position: absolute;
   right: -13px;
   top: -13px;
+}
+
+.center-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.center-nav .nav-link-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  margin-top: 0px;
+}
+.center-nav .nav-link-menu .nav-links {
+  font-weight: bold;
+  font-size: 1.563rem;
+  margin: 0 40px 20px;
+}
+.center-nav .nav-link-menu .nav-links a.nav-link:link,
+.center-nav .nav-link-menu .nav-links a.nav-link:visited,
+.center-nav .nav-link-menu .nav-links a.nav-link:active {
+  color: #333333;
+  text-decoration: none;
+}
+.center-nav .nav-link-menu .nav-links a.nav-link:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+.center-nav .nav-link-menu .nav-links .nav-link {
+  color: #333333;
 }
 
 .product-cart {
@@ -145,39 +173,63 @@
 }
 
 @media only screen and (max-width: 992px) {
-  .nav-menu {
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 5% 5% 0 5%;
-  }
-  .nav-menu .left {
+  .nav-menu .left-nav {
     height: 100%;
     flex: 1;
   }
-  .nav-menu .left .logo {
+  .nav-menu .left-nav .logo {
     justify-content: flex-start;
     align-items: flex-start;
+    width: 200px;
   }
-  .nav-menu .right {
+  .nav-menu .right-nav {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
     margin: 0;
-    gap: 15px;
     flex: 1;
-    margin-bottom: 10px;
+    gap: 10px;
   }
-  .nav-menu .right .nav-links {
-    align-self: flex-end;
+  .nav-menu .right-nav .icons.menu-icon {
+    display: inline-block;
+  }
+  .center-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: auto;
+  }
+  .center-nav .nav-link-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+  }
+  .center-nav .nav-link-menu .nav-links {
+    align-self: center;
     height: 0;
     overflow: hidden;
     transition: var(--transition);
   }
-  .nav-menu .right .show-nav-links {
-    height: auto;
+  .center-nav .nav-link-menu .nav-links a.nav-link:link,
+  .center-nav .nav-link-menu .nav-links a.nav-link:visited,
+  .center-nav .nav-link-menu .nav-links a.nav-link:active {
+    color: #333333;
+    text-decoration: none;
   }
-  .nav-menu .right .icons.menu-icon {
-    display: inline-block;
+  .center-nav .nav-link-menu .nav-links a.nav-link:hover {
+    color: #333333;
+    text-decoration: underline;
+  }
+  .center-nav .nav-link-menu .nav-links .nav-link {
+    color: #333333;
+  }
+  .center-nav .nav-link-menu .show-nav-links {
+    height: auto;
   }
 }/*# sourceMappingURL=navbar.css.map */
