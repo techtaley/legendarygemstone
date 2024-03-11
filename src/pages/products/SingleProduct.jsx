@@ -55,28 +55,6 @@ export default function SingleProduct() {
       {loading && (
         <section className="responsive single-product section">
           <div className="left-side">
-            <div className="thumbnail">
-
-              {pageAttributes.media[0] &&
-                <img
-                  className="thumbnail-image"
-                  src={IMAGE_URL + pageAttributes.media[0]?.url}
-                  //src={`./../assets/${pageAttributes.media[0]?.image}`}
-                  alt=""
-                  onClick={() => setSelectedId(0)}
-                />  
-              }              
-              {pageAttributes.media[1] &&
-                <img
-                  className="thumbnail-image"
-                  src={IMAGE_URL + pageAttributes.media[1]?.url}                  
-                  //src={`./../assets/${pageAttributes.media[1]?.image}`}
-                  // src={pageAttributes.media[1]?.image}
-                  alt=""
-                  onClick={() => setSelectedId(1)}
-                />                
-              }                                       
-            </div>
 
             <div className="main-image">              
               <img 
@@ -84,9 +62,30 @@ export default function SingleProduct() {
                 //src={`./../assets/${pageAttributes.media[selectedId].image}` }
                 src={IMAGE_URL + pageAttributes.media[selectedId]?.url}
                 alt=""                
-              /> 
-             
+              />              
             </div>
+
+            <div className="thumbnail">
+                {pageAttributes.media[0] &&
+                  <img
+                    className="thumbnail-image"
+                    src={IMAGE_URL + pageAttributes.media[0]?.url}
+                    //src={`./../assets/${pageAttributes.media[0]?.image}`}
+                    alt=""
+                    onClick={() => setSelectedId(0)}
+                  />  
+                }              
+                {pageAttributes.media[1] &&
+                  <img
+                    className="thumbnail-image"
+                    src={IMAGE_URL + pageAttributes.media[1]?.url}                  
+                    //src={`./../assets/${pageAttributes.media[1]?.image}`}
+                    // src={pageAttributes.media[1]?.image}
+                    alt=""
+                    onClick={() => setSelectedId(1)}
+                  />                
+                }                                       
+                </div>
           </div>
 
           <div className="right-side">

@@ -6,13 +6,29 @@ import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorite } from "../../features/favorite/favoriteReducer";
 
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  PinterestShareButton, 
+  FacebookIcon,
+  FacebookMessengerIcon,
+  InstapaperIcon,
+  LinkedinIcon,
+  PinterestIcon,
+  TumblrIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  XIcon,  
+} from "react-share";
+
   const IMAGE_URL = import.meta.env.VITE_UPLOAD_URL
 
 export default function Card({ data }) {
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false)
   const dispatch = useDispatch();
-  const favorite = useSelector(state => state.items);  
+  const favorite = useSelector(state => state.items); 
+  const shareUrl = window.location.href;
 
   const handleToggle = () => {
     setIsFavorite(!isFavorite);
@@ -45,23 +61,50 @@ export default function Card({ data }) {
               {data.attributes.title}
             </p>
             <div className="product-details">
-              {data.attributes.sale_price ? (
-                <p>
-                  <span className="sale-price">
-                    ${data.attributes.regular_price}
-                  </span>
-                  <span>${data.attributes.sale_price}</span>
-                </p>
-              ) : (
-                <p>
-                  <span>${data.attributes.regular_price}</span>
-                </p>
-              )}
 
-              {/* {isFavorite 
-              ? <MdFavorite className="icon" onClick={() => dispatch(addFavorite(data.id)) && setIsFavorite(!isFavorite)} />  
-              : <MdFavoriteBorder className="icon" onClick={() => dispatch(removeFavorite(data.id)) && setIsFavorite(!isFavorite)} />  
-              } */}
+              <div className="price-details">
+
+                {data.attributes.sale_price ? (
+                  <p>
+                    <span className="sale-price">
+                      ${data.attributes.regular_price.toFixed(2)}
+                    </span>
+
+                    <span>
+                      ${data.attributes.sale_price.toFixed(2)}
+                    </span>
+                  </p>
+                  ) : (
+                    <p>
+                      <span>${data.attributes.regular_price.toFixed(2)}</span>
+                    </p>
+                  )}
+              </div>
+
+              <div className="social-details">
+              <TwitterShareButton url={shareUrl}>
+                <XIcon className="social-media-buttons" size={22} round={true} />
+              </TwitterShareButton>
+              <FacebookShareButton url={shareUrl}>
+                <FacebookIcon className="social-media-buttons" size={22} round={true} />
+              </FacebookShareButton>
+              <PinterestShareButton url={shareUrl}>
+                <PinterestIcon className="social-media-buttons" size={22} round={true} />
+              </PinterestShareButton>
+
+                {isFavorite 
+                ? <MdFavorite className="icon" onClick={() => dispatch(addFavorite(data.id)) && setIsFavorite(!isFavorite)} />  
+                : <MdFavoriteBorder className="icon" onClick={() => dispatch(removeFavorite(data.id)) && setIsFavorite(!isFavorite)} />  
+                }
+
+                {/* 
+                <TwitterShareButton className="social-media-buttons" />
+                <FacebookShareButton className="social-media-buttons" />
+                <PinterestShareButton className="social-media-buttons" />   
+                */}
+
+              </div>
+
             </div>
           </p>
       </div>  

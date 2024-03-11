@@ -1,8 +1,10 @@
 import React from "react";
-//import { useState, useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+//import { useState } from "react";
 import ProductList from "./ProductList";
 import SearchList from "../../components/search/SearchList";
+
+import { makeRequest } from './../../../src/makeRequest'
 
 import "./products.css";
 
@@ -25,6 +27,30 @@ export default function Products({ type }) {
   const { apiData, loading, error } = useFetch(
     `/sub-categories?filters[categories][id][$eq]=${catId}`
   );
+
+  const [data, setData] = useState(null);
+  const [loadData, setLoadData] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(false);
+
+  useEffect(() => {
+      const fetchData = async() => {
+
+          try {
+              setLoadData(true);
+              const res = await makeRequest.get(`/products?populate=*`);
+              setData(res.data.data)
+              //setError(false);
+              setLoadData(true)
+          } catch(err) {
+              setErrorMsg(true);
+          }
+          setLoadData(false);
+      };
+
+      fetchData();
+
+  }, []);
+
 
   const navigate = useNavigate();
 
@@ -66,7 +92,10 @@ export default function Products({ type }) {
                 <label htmlFor={cat.id}>{cat.attributes.title}</label>
               </div>
             ))}
-          </div>
+          </div><br />
+
+          {/* <div className="reset-filter" onClick={()=> navigate(`/products/12`)} >reset filter</div> */}
+          <Link className="reset-filter" to="/products/1">reset filter</Link>
 
           <div className="filterItem">
             <h2>Filter by Price</h2>
@@ -117,9 +146,11 @@ export default function Products({ type }) {
           </div>
 
           <div className="product-nav-div">
-            {/* <Link className="product-nav-link" to="/products/1">
+            {/* 
+            <Link className="product-nav-link" to="/products/1">
               all
-            </Link> */}
+            </Link> 
+            */}
             <Link className="product-nav-link" to="/products/12">
               sets
             </Link>
@@ -129,18 +160,26 @@ export default function Products({ type }) {
             <Link className="product-nav-link" to="/products/4">
               rings
             </Link>
-            {/* <Link className="product-nav-link" to="/products/6">
+            {/* <a className="product-nav-link" onClick={() => navigate("/products/1")}>all</a>
+            <a className="product-nav-link" onClick={() => navigate("/products/12")}>sets</a>
+            <a className="product-nav-link" onClick={() => navigate("/products/3")}>earings</a>
+            <a className="product-nav-link" onClick={() => navigate("/products/4")}>rings</a> */}
+            {/* 
+            <Link className="product-nav-link" to="/products/6">
               sale
-            </Link> */}
+            </Link> 
+            */}
           </div>
 
           <div className="search-div">
-            {/* <input
+            {/* 
+            <input
               type="text"
               className="search-input"
               placeholder="Search for a product"
               onChange={handleChange}
-            /> */}
+            /> 
+            */}
             {/* <PiMagnifyingGlassBold className="icon" /> */}
           </div>
 
@@ -171,9 +210,11 @@ export default function Products({ type }) {
                 subCats={selectedSubCatIds}
               />
             )}
-            {/* {targetValue !== "" &&               
-               <FavoriteList catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCatIds} />
-              } */}
+            {/* 
+            {targetValue !== "" &&               
+              <FavoriteList catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCatIds} />
+            } 
+            */}
           </section>
         </div>
       </section>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MdDelete } from "react-icons/md";
 import './../navbar/navbar.css'
 import axios from "axios";
+import './../../styles/main/main.css';
 
 import { useSelector, useDispatch } from 'react-redux'
 import { removeItem, clearCart } from '../../features/cart/cartReducer';
@@ -15,13 +16,17 @@ import { makeRequest } from '../../makeRequest';
 export default function Cart() {
   const products = useSelector(store => store.cart.products)   
   const dispatch = useDispatch();
+
+  console.log(products)
   
   const totalAmt = () => {  //move to store as calculateTotal()
     let total = 0;
 
     products.forEach(item =>   //for each item in the cart
-      total += item.quantity * item.cost
+      //const price = item.regular_price ? item.regular_price : item.sale_price; 
+      total += item.quantity * item.regular_price ? item.regular_price : item.sale_price
     )
+
     return total.toFixed(2);    
   } 
 
@@ -58,11 +63,13 @@ export default function Cart() {
 
                 <div className="details">
                     <h3>{product.title}</h3>
-                    {/* <p className="desc">{product.desc.substring(0, 100)}</p> */}
-                    {product.sale_price                     
-                      ? <p className="price">{product.quantity} x ${product.sale_price}</p> 
-                      : <p className="price">{product.quantity} x ${product.reg_price}</p> 
-                    }
+                    {/* <p className="desc">{product.desc.substring(0, 80)}</p> */}
+                      {/* <p className="price">{product.quantity} x ${product.regular_price ? product.sale_price : product.regular_price}</p>                      */}
+                      {/* <p className="price">{product.quantity} x ${product.regular_price.toFixed(2)}</p>                      */}
+                      {product.sale_price.toFixed(2)                     
+                        ? <p className="price">{product.quantity} x ${product.sale_price.toFixed(2)}</p> 
+                        : <p className="price">{product.quantity} x ${product.regular_price.toFixed(2)}</p> 
+                      }
                 </div>
                 <MdDelete className="delete-icon" onClick={() => dispatch(removeItem(product.id))}/>
             </div>    
@@ -74,7 +81,7 @@ export default function Cart() {
         </div>
 
         <button className="btn" onClick={handlePayment}>Checkout</button>
-        <p className='center'><span className="bold">For Testing Only:</span>  On Checkout page enter credit card# as "4242 4242 4242 4242" </p>
+        {/* <p className='center'><span className="bold">For Testing Only:</span>  On Checkout page enter credit card# as "4242 4242 4242 4242" </p> */}
 
         <span className="reset" onClick={() => dispatch(clearCart())}>Clear cart</span>
     </div>

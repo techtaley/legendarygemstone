@@ -130,7 +130,7 @@
 
     .nav-links {
       font-weight: bold;
-      font-size: $subheading;
+      font-size: $normalfont;
       margin: 0 40px 20px;
 
 
@@ -159,9 +159,9 @@
   gap: 20px;
   position: absolute;
   right: 20px;
-  top: 80px; //from the previous element
+  top: 150px; //from the previous element
   z-index: 999;
-  background-color: antiquewhite;
+  background-color: $dark-lt;
   box-shadow: 5px 5px 5px 5px #888888;
   padding: 20px;
   border-radius: 3px;
@@ -182,6 +182,7 @@
 
       .desc {
         color: #6666;
+        width: 250px;
       }
 
       .price {
@@ -217,6 +218,10 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .product-cart {
+    top: 120px;
+  }
+
   .nav-menu {
     // align-items: flex-end;
     // justify-content: flex-start;

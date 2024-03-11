@@ -8,7 +8,11 @@
         position: sticky;
         height: 100%;
         top: 50px; 
-        
+
+        // .reset-filter {
+        //     color: #600;
+        // }
+
         .search-div {
             @include flexdisplay(row, center, flex-start);
             //border: 1px dotted blue;
@@ -27,7 +31,7 @@
                 margin-left: 1%;
 
             } 
-        }        
+        }                        
         
         .filterItem {
             h2 {
@@ -40,11 +44,28 @@
             
             label {
                 padding-left: 5px;
-            }
+            }   
+        }  
+        
+        a.reset-filter {
+            font-weight: bold;
         }
+
+        a.reset-filter:link,
+        a.reset-filter:visited {
+            font-weight: bold;
+            color: $dark-md;
+        }
+
+        a.reset-filter:hover,
+        a.reset-filter:active {
+            color: $dark-md;
+            font-weight: bold;
+            text-decoration: underline;
+        }                      
     }
 
-    .right-side{
+    .right-side {
         //@include flexdisplay(column, flex-end, flex-start);
         flex: 3;
         margin-left: 30px;
@@ -104,11 +125,6 @@
 }
 
 
-.sale-price {
-    text-decoration: line-through;
-    color: $dark-lt;
-    margin-right: 10px;
-}
 
 .product-list {
     width: 100%;
@@ -119,26 +135,41 @@
     .product-list-div {
         @include flexdisplay(column, flex-start, flex-start);
         width: 230px;
-        height: 375px;
+        height: 400px;
         gap: 10px;
         padding: 10px;        
         border: 1px solid $dark-lt;
 
         .product-list-img {
             // width: 100%;
-            // height: 100%;            
+            height: 270px;            
         }
 
         .product-list-desc {           
             .product-desc {
                 font-weight: bold
             }
-
+            
             .product-details {
-                display: flex;
-                justify-content: space-between;
-
+                @include flexdisplay(column, center, flex-start); 
+                width: 200px;  
                 
+                .sale-price {
+                    text-decoration: line-through;
+                    color: $dark-lt;
+                    margin-right: 10px;
+                }
+                
+                .social-details {
+                    width: 100%;
+                    @include flexdisplay(row, flex-end, center);
+                    gap: 8px;
+                
+                    .social-media-buttons {
+                        color: $dark-md;
+                    }
+                }
+
                 .fillheart {
 
                     color: $dark-md;
@@ -155,7 +186,6 @@
             //     margin-right: 10px;
             // }
         }
-
     }
 }
 
@@ -165,26 +195,28 @@
     gap: 30px; 
 
     .left-side {
-        @include flexdisplay(row, flex-start, flex-start);
+        @include flexdisplay(column, flex-start, flex-start);
         flex: 1;
         gap: 30px;
+        width: 400px;
 
         .thumbnail {
             @include flexdisplay(column, flex-start, flex-start);
             gap: 10px;
             flex: 1;
-            border: none;
-
+            margin: auto;
+            width: 400px;
 
             .thumbnail-image {
-                width: 150px;
+                width: 100px;
                 height: auto;
                 border: none;
             }
         }
 
         .main-image {
-            width: 300px;
+            width: 400px;
+            margin: auto;
             height: auto;
             overflow: hidden;
             flex: 5;
@@ -204,12 +236,12 @@
             @include flexdisplay(column, flex-start, flex-start);
             height: auto;
             gap: 20px;
-
-            // .sale-price {
-            //     text-decoration: line-through;
-            //     color: $dark-lt;
-            //     margin-right: 10px;
-            // }            
+  
+            .sale-price {
+                text-decoration: line-through;
+                color: $dark-lt;
+                margin-right: 10px;
+            }            
 
             .quantity {
                 @include flexdisplay(row, flex-start, center);
@@ -299,4 +331,29 @@
     .products {
         flex-direction: column;
     }  
+
+    .single-product {
+        @include flexdisplay(column, flex-start, flex-start);
+        gap: 30px; 
+    
+        .left-side {    
+            .thumbnail {    
+    
+                .thumbnail-image {
+                }
+            }
+    
+            .main-image {
+                width: 300px;
+                height: auto;
+                overflow: hidden;
+                flex: 5;
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }    
 } 
