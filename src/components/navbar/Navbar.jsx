@@ -61,12 +61,14 @@ export default function Navbar() {
   const [openCart, setOpenCart] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const products = useSelector((store) => store.cart.products);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isWishlist, setIsWishlist] = useState(false);
   const navigate = useNavigate();
 
   const handleToggle = () => {
-    setIsFavorite(!isFavorite);
+    setIsWishlist(!isWishlist);
     //navigate(`/products/${data.id}`);
+
+    //show /wishlist page  or type wishlist
   };
 
   return (
@@ -99,7 +101,16 @@ export default function Navbar() {
 
             <MdOutlinePersonOutline className="icon" />
 
-            <MdFavoriteBorder className="icon" onClick={handleToggle} />
+            {/* {isWishlist 
+              ? <MdFavorite className="icon" onClick={(e) => handleToggle} />
+              : <MdFavoriteBorder className="icon" onClick={(e) => handleToggle} />
+            } */}
+
+            {isWishlist 
+              ? <MdFavorite className="icon" onClick={(e) => handleToggle} />
+              : <MdFavoriteBorder className="icon" onClick={(e) => handleToggle} />
+            }
+
             <div className="cartIcon" onClick={() => setOpenCart(!openCart)}>
               <MdOutlineShoppingCart className="icon" />
               <span>{products.length}</span>

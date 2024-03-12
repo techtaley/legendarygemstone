@@ -32,6 +32,26 @@ export default function Products({ type }) {
   const [loadData, setLoadData] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
 
+  const menu = [
+    {
+      title: "all",
+      cid: 1
+    },
+    {
+      title: "sets",
+      cid: 12
+    },
+    {
+      title: "earrings",
+      cid: 3
+    },    
+    {
+      title: "rings",
+      cid: 4
+    }    
+  ]
+
+  
   useEffect(() => {
       const fetchData = async() => {
 
@@ -73,6 +93,10 @@ export default function Products({ type }) {
     console.log(value);
   };
 
+  const handleClick = cid => {
+    setSelectedSubCatIds([])    
+  }
+
   return (
     <>
       <section className="section products responsive">
@@ -96,6 +120,9 @@ export default function Products({ type }) {
 
           {/* <div className="reset-filter" onClick={()=> navigate(`/products/12`)} >reset filter</div> */}
           <Link className="reset-filter" to="/products/1">reset filter</Link>
+          {/* {apiData.map(cat => 
+            <Link className="reset-filter" onClick={handleClick(cat.id)}>reset filter</Link>
+          )} */}
 
           <div className="filterItem">
             <h2>Filter by Price</h2>
@@ -146,12 +173,16 @@ export default function Products({ type }) {
           </div>
 
           <div className="product-nav-div">
+            {menu.map(item =>          
+              <Link className="product-nav-link" onClick={(e) => handleClick(item.cid)} to={`/products/${item.cid}`}>{item.title}</Link>
+            )}  
+
             {/* 
             <Link className="product-nav-link" to="/products/1">
               all
             </Link> 
             */}
-            <Link className="product-nav-link" to="/products/12">
+            {/* <Link className="product-nav-link" to="/products/12">
               sets
             </Link>
             <Link className="product-nav-link" to="/products/3">
@@ -159,7 +190,7 @@ export default function Products({ type }) {
             </Link>
             <Link className="product-nav-link" to="/products/4">
               rings
-            </Link>
+            </Link> */}
             {/* <a className="product-nav-link" onClick={() => navigate("/products/1")}>all</a>
             <a className="product-nav-link" onClick={() => navigate("/products/12")}>sets</a>
             <a className="product-nav-link" onClick={() => navigate("/products/3")}>earings</a>

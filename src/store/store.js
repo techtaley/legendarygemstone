@@ -1,5 +1,5 @@
 import cartReducer from '../features/cart/cartReducer'
-import favoriteReducer from '../features/favorite/favoriteReducer'
+import wishlistReducer from '../features/wishlist/wishlistReducer'
 
 //import { configureStore } from '@reduxjs/toolkit'
 // export default configureStore({
@@ -41,13 +41,13 @@ const persistConfig = {
 
 //const persistedReducer = persistReducer(persistConfig, rootReducer) //update with cartReducer
 const persistedCartReducer = persistReducer(persistConfig, cartReducer)
-const persistedFavoriteReducer = persistReducer(persistConfig, favoriteReducer)
+const persistedWishlistReducer = persistReducer(persistConfig, wishlistReducer)
 
 
 export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
-    Favorite: persistedFavoriteReducer
+    favorite: persistedWishlistReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./products.css";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite } from "../../features/favorite/favoriteReducer";
+import { addWishlist } from "../../features/wishlist/wishlistReducer";
 
 import {
   FacebookShareButton,
@@ -25,15 +25,18 @@ import {
 
 export default function Card({ data }) {
   const navigate = useNavigate();
-  const [isFavorite, setIsFavorite] = useState(false)
+  const [isWishlist, setIsWishlist] = useState(false)
   const dispatch = useDispatch();
   const favorite = useSelector(state => state.items); 
   const shareUrl = window.location.href;
 
-  const handleToggle = () => {
-    setIsFavorite(!isFavorite);
+  const handleToggle = wid => {
+    setIsWishlist(!isWishlist);
 
-    dispatch(addFavorite)
+    {isWishlist === false     
+      ? dispatch(addWishlist(wid))
+      : dispatch(removeWishlist(wid))
+    }
 
     //map through all products, if product.id === favId  return products or null
     //setFavoriteProducts() 
@@ -92,17 +95,15 @@ export default function Card({ data }) {
                 <PinterestIcon className="social-media-buttons" size={22} round={true} />
               </PinterestShareButton>
 
-                {isFavorite 
-                ? <MdFavorite className="icon" onClick={() => dispatch(addFavorite(data.id)) && setIsFavorite(!isFavorite)} />  
-                : <MdFavoriteBorder className="icon" onClick={() => dispatch(removeFavorite(data.id)) && setIsFavorite(!isFavorite)} />  
-                }
-
-                {/* 
-                <TwitterShareButton className="social-media-buttons" />
-                <FacebookShareButton className="social-media-buttons" />
-                <PinterestShareButton className="social-media-buttons" />   
+                {/* {isWishlist 
+                ? <MdFavorite className="icon" onClick={() => dispatch(addWishlist(data.id)) && setIsWishlist(!isWishlist)} />  
+                : <MdFavoriteBorder className="icon" onClick={() => dispatch(removeWishlist(data.id)) && setIsWishlist(!isWishlist)} />  
+                } 
                 */}
-
+                {isWishlist 
+                ? <MdFavorite className="icon" onClick={(e) => handleToggle(data.id)}/>  
+                : <MdFavoriteBorder className="icon" onClick={(e) => handleToggle(data.id)}/>  
+                }
               </div>
 
             </div>

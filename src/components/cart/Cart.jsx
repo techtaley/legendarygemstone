@@ -63,10 +63,8 @@ export default function Cart() {
 
                 <div className="details">
                     <h3>{product.title}</h3>
-                    {/* <p className="desc">{product.desc.substring(0, 80)}</p> */}
-                      {/* <p className="price">{product.quantity} x ${product.regular_price ? product.sale_price : product.regular_price}</p>                      */}
-                      {/* <p className="price">{product.quantity} x ${product.regular_price.toFixed(2)}</p>                      */}
-                      {product.sale_price.toFixed(2)                     
+                      {/* <p className="desc">{product.desc.substring(0, 80)}</p> */}
+                      {product.sale_price                    
                         ? <p className="price">{product.quantity} x ${product.sale_price.toFixed(2)}</p> 
                         : <p className="price">{product.quantity} x ${product.regular_price.toFixed(2)}</p> 
                       }

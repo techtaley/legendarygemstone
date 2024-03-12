@@ -4,24 +4,24 @@ const initialState = {
     items: [],
 }
 
-export const favoriteSlice = createSlice({  
-  name: 'favorite',
+export const wishlistSlice = createSlice({  
+  name: 'wishlist',
   initialState,
   reducers: {   
-   addFavorite(state, action){  //does the favorite already exist in favorites 
+   addWishlist(state, action){  //does the wishlist already exist in wishlists 
       const existing = state.items.find(product => product.id === action.payload.id) 
 
-      if(!existing) {  //if doesn't exists, add the favorite product
+      if(!existing) {  //if doesn't exists, add the wishlist product
         state.items.push(action.payload)
       }
     },
-    removeFavorite(state, action){  //removes the unclicked favorite product
+    removeWishlist(state, action){  //removes the unclicked wishlist product
       state.items = state.items.filter(item => item.id !== action.payload)  //data.id passed
     }    
   }  
 })
 
 // Action creators are generated for each case reducer function
-export const { addFavorite, removeFavorite } = favoriteSlice.actions
+export const { addWishlist, removeWishlist } = wishlistSlice.actions
 
-export default favoriteSlice.reducer
+export default wishlistSlice.reducer
