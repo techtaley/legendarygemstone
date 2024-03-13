@@ -7,7 +7,7 @@ import Card from "./Card";
 import "./products.css";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function FavoriteList({ catId, maxPrice, sort, subCats }) {
+export default function Wishlist({ catId, maxPrice, sort, subCats }) {
   //const [isFavorite, setIsFavorite] = useState(false);
     const { favorites } = useSelector(state => state.favorite)
     const dispatch = useDispatch()

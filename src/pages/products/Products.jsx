@@ -115,14 +115,14 @@ export default function Products({ type }) {
                 />
                 <label htmlFor={cat.id}>{cat.attributes.title}</label>
               </div>
-            ))}
+            ))}  
           </div><br />
 
-          {/* <div className="reset-filter" onClick={()=> navigate(`/products/12`)} >reset filter</div> */}
-          <Link className="reset-filter" to="/products/1">reset filter</Link>
-          {/* {apiData.map(cat => 
-            <Link className="reset-filter" onClick={handleClick(cat.id)}>reset filter</Link>
-          )} */}
+          {/* 
+          {apiData.id === "all" &&    
+          <Link className="reset-filter" onClick={(e) => handleClick(menu[0].cid)} to={`/products/${menu[0].cid}`}>reset filter</Link>
+          }  
+          */}
 
           <div className="filterItem">
             <h2>Filter by Price</h2>

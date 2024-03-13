@@ -1,7 +1,22 @@
 import React from 'react';
 import { FaCcMastercard, FaCcVisa, FaPaypal, FaStripeS } from "react-icons/fa6";
 import { GiNecklaceDisplay } from "react-icons/gi";
-//import {  FaCcStripe  } from "react-icons/fa";
+
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  PinterestShareButton, 
+  FacebookIcon,
+  FacebookMessengerIcon,
+  InstapaperIcon,
+  LinkedinIcon,
+  PinterestIcon,
+  TumblrIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  XIcon,  
+} from "react-share";
+
 
 const IMAGE_URL=import.meta.env.VITE_UPLOAD_URL
 const IMG_UPLOAD=import.meta.env.VITE_IMG_UPLOAD
@@ -57,14 +72,25 @@ export default function BottomFooter() {
       </div>    
 
       <div className="social-icons">
+        {/* 
         <FaCcMastercard className="icon"/> 
         <FaCcVisa className="icon"/> 
         <FaPaypal className="icon"/> 
-        <FaStripeS className="icon"/>
+        <FaStripeS className="icon"/> */}
 
           {/* {paymentData.map(item => 
             <img src={item.image} alt={item.desc} />
           )} */}
+
+        {/* <TwitterShareButton url={shareUrl}>
+          <XIcon className="social-media-buttons" size={22} round={true} />
+        </TwitterShareButton> */}
+        <FacebookShareButton url="https://www.facebook.com/legendarygemstone">
+          <FacebookIcon className="social-media-buttons" size={22} round={true} />
+        </FacebookShareButton>
+        {/* <PinterestShareButton url={shareUrl}>
+          <PinterestIcon className="social-media-buttons" size={22} round={true} />
+        </PinterestShareButton>           */}
       </div>
     </div>
   )

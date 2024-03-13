@@ -13,7 +13,9 @@ import { loadStripe } from '@stripe/stripe-js';
 
 import { makeRequest } from '../../makeRequest';
 
-export default function Cart() {
+export default function Cart_Updated() {
+  //const { products, total, amount } = useSelector(store => store.cart)
+
   const products = useSelector(store => store.cart.products)   
   const dispatch = useDispatch();
 
@@ -24,7 +26,7 @@ export default function Cart() {
 
     products.forEach(item =>   //for each item in the cart
       //const price = item.regular_price ? item.regular_price : item.sale_price; 
-      total += item.quantity * (item.regular_price ? item.regular_price : item.sale_price)
+      total += item.quantity * item.regular_price ? item.regular_price : item.sale_price
       //total += item.quantity * item.regular_price
     )
 
@@ -53,13 +55,24 @@ export default function Cart() {
     }
   }  
 
+  // if (amount < 1) {
+  //   return <section className='cart'>
+  //     <header>
+  //       <h2>your cart</h2>
+  //       <h4 className="empty-cart">is currently empty</h4>
+  //     </header>
+  //   </section>
+  // }
+
   return (
     <div className="product-cart">
         <h3>Products in your cart</h3>
 
         {products?.map(product => 
             <div className="data" key={product.id}>
+
                 <img src={IMAGE_URL + product.media[0]?.url} alt={product.title} />
+
                 <div className="details">
                     <h3>{product.title}</h3>
                       {/* <p className="desc">{product.desc.substring(0, 80)}</p> */}

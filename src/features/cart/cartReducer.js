@@ -2,14 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'  //redux toolkit allows you to pu
 
 const initialState = {
   products: [],     //object that includes title, desc, regular_price, sale_price
-  // quantity: 0,
-  // totalqty: 0,
-  // totalprice: 0,
-  // isLoading: false,   
+  quantity: 0,
+  totalqty: 0,
+  totalprice: 0,
+  isLoading: true,   
 }
 
 export const cartSlice = createSlice({
-  
   name: 'cart',
   initialState,
   reducers: {   //addItem, removeItem, clearCart
@@ -31,6 +30,14 @@ export const cartSlice = createSlice({
     clearCart: (state) => {  
       state.products = []
       //need to reset all quantities back to 1
+    },
+    calculateTotals: (state) => {
+      let quantity = 0;
+      let totalqty = 0;
+      state.products.forEach(product => {
+        quantity += product.quantity;
+        totalqty += product.quantity * (product.regular_price ? product.regular_price : product.sale_price);
+      })
     }  
   },
 })

@@ -4,21 +4,21 @@ import { useNavigate } from "react-router-dom";
 import "./products.css";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite } from "../../features/favorite/favoriteReducer";
+import { addFavorite } from "../../features/wishlist/wishlistReducer";
 
 export default function Card({ data }) {
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false);
   const dispatch = useDispatch();
-  const { favorite } = useSelector((state) => state.favorite.items);  //get from updated initial state
+  const { wishlist } = useSelector((state) => state.wishlist.items);  //get from updated initial state
 
   return (
     <div className="product-list-div" key={data.id}>
       <img
         className="product-list-img"
-        src={favorite.attributes.media[0]?.url}
-        // src={`./../assets/${favorite.attributes.media[0]?.image}`}
-        alt={`${favorite.attributes.title} photo`}
+        src={wishlist.attributes.media[0]?.url}
+        // src={`./../assets/${wishlist.attributes.media[0]?.image}`}
+        alt={`${wishlist.attributes.title} photo`}
         onClick={() => navigate(`/single-product/${data.id}`)}
       />
 
@@ -27,19 +27,19 @@ export default function Card({ data }) {
           className="product-desc"
           onClick={() => navigate(`/single-product/${data.id}`)}
         >
-          {favorite.attributes.title}
+          {wishlist.attributes.title}
         </p>
         <div className="product-details">
-          {favorite.attributes.sale_price ? (
+          {wishlist.attributes.sale_price ? (
             <p>
               <span className="sale-price">
-                ${favorite.attributes.regular_price}
+                ${wishlist.attributes.regular_price}
               </span>
-              <span>${favorite.attributes.sale_price}</span>
+              <span>${wishlist.attributes.sale_price}</span>
             </p>
           ) : (
             <p>
-              <span>${favorite.attributes.regular_price}</span>
+              <span>${wishlist.attributes.regular_price}</span>
             </p>
           )}
 

@@ -14,6 +14,7 @@ import Footer from './components/footer/Footer';
 import FAQs from './pages/FAQs';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import Wishlist from './pages/wishlist/Wishlist';
 
 import './styles/variables/variables.scss'
 import './styles/main/main.css'
@@ -69,7 +70,11 @@ const router = createBrowserRouter([
       { 
         path: 'faqs', 
         element: <FAQs /> 
-      },                               
+      }, 
+      { 
+        path: 'wishlist', 
+        element: <Wishlist /> 
+      },                                     
     ],
   },
 ])
