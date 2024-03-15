@@ -107,7 +107,7 @@ p {
   padding: 2%;
   display: block;
   margin: 0px auto;
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-top: 30px;
 }
 .btn.darkbtn {
@@ -218,7 +218,7 @@ header .logo {
 }
 .statement .sub-statement {
   color: rgb(187, 139, 16);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-family: "PT Sans Narrow", sans-serif;
   letter-spacing: 1.2px;
   word-spacing: 5px;
@@ -386,7 +386,7 @@ header .logo {
     width: 100%;
   }
   .responsive.products .left-side h2 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   .responsive.products .right-side .product-list {
     display: flex;

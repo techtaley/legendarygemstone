@@ -3,8 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'  //redux toolkit allows you to pu
 const initialState = {
   products: [],     //object that includes title, desc, regular_price, sale_price
   quantity: 0,
-  totalqty: 0,
-  totalprice: 0,
+  total: 0,
   isLoading: true,   
 }
 
@@ -17,7 +16,7 @@ export const cartSlice = createSlice({
 
       if(existingProduct) {
         //item.quantity = item.quantity.action.payload.quantity;  //full code
-        existingProduct.quantity += action.payload.quantity;
+        existingProduct.quantity = action.payload.quantity;
       } else {
         state.products.push(action.payload)
       }
@@ -33,16 +32,21 @@ export const cartSlice = createSlice({
     },
     calculateTotals: (state) => {
       let quantity = 0;
-      let totalqty = 0;
+      let total = 0;
+
       state.products.forEach(product => {
         quantity += product.quantity;
-        totalqty += product.quantity * (product.regular_price ? product.regular_price : product.sale_price);
+        total += product.quantity * (product.regular_price ? product.regular_price : product.sale_price);
+        //total += product.quantity * product.regular_price 
       })
+
+      state.quantity = quantity;
+      state.total = total;
     }  
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addToCart, removeItem, clearCart } = cartSlice.actions
+export const { addToCart, removeItem, clearCart, calculateTotals } = cartSlice.actions
 
 export default cartSlice.reducer

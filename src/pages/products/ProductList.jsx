@@ -6,7 +6,7 @@ import Card from "./Card";
 
 import "./products.css";
 
-export default function ProductList({ catId, maxPrice, sort, subCatIds,query }) {
+export default function ProductList({ catId, maxPrice, sort, subCatIds, query }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const navigate = useNavigate();

@@ -15,7 +15,6 @@
 
         .search-div {
             @include flexdisplay(row, center, flex-start);
-            //border: 1px dotted blue;
             width: 100%;
 
             .search-input {

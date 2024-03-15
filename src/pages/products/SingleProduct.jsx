@@ -137,8 +137,8 @@ export default function SingleProduct() {
                 media: pageAttributes.media,
                 quantity, //in the store and front end 
               }))}>
-                <FaCartArrowDown className="icon" />
-                <span>Add to cart</span>
+                {/* <FaCartArrowDown className="icon" /> */}
+                <span>ADD / UPDATE</span>
               </button>
 
               <div className="product-like-links">

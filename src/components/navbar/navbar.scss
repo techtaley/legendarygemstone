@@ -159,7 +159,7 @@
   gap: 20px;
   position: absolute;
   right: 20px;
-  top: 150px; //from the previous element
+  top: 100px; //from the previous element
   z-index: 999;
   background-color: $dark-lt;
   box-shadow: 5px 5px 5px 5px #888888;
@@ -167,7 +167,9 @@
   border-radius: 3px;
 
   .data {
-    display: flex;
+    @include flexdisplay(row, flex-end, flex-start); //used as a header
+    width: 350px;
+    gap: 10px;
 
     img {
       width: 100px;
@@ -175,10 +177,19 @@
       margin-bottom: 10px;
       margin-right: 10px;
     }
+
     .details {
-      h3 {
+      width: 100%;
+
+
+      h4 {
         margin-bottom: 30px;
       }
+
+      .title {
+        font-size: 14px;
+        font-weight: bold;
+      } 
 
       .desc {
         color: #6666;

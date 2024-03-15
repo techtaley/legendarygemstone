@@ -48,6 +48,22 @@ const router = createBrowserRouter([
         element: <Products />,
       },
       {
+        path: '/products/all',
+        element: <Products />,
+      },      
+      {
+        path: '/products/sets',
+        element: <Products />,
+      },      
+      {
+        path: '/products/earrings',
+        element: <Products />,
+      },      
+      {
+        path: '/products/rings',
+        element: <Products />,
+      },                        
+      {
         path: '/single-product/:id',	//
         element: <SingleProduct />,
       },
